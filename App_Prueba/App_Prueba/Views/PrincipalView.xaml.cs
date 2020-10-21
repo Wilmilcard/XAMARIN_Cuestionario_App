@@ -25,7 +25,7 @@ namespace App_Prueba.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient rest = new RestClient();
-                var rpta = await rest.Get<Questions>();
+                var rpta = await rest.Get<Result>();
                 if (rpta != null)
                     this.txt.Text = rpta.results[2].category;
             });
