@@ -7,14 +7,14 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="You scored" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-            <Label Text="3 / 10" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            <Label Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
             <ScrollView>
                 <ListView ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" RowHeight="80" Margin="10" SeparatorVisibility="Default">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="15">
-                                    <Label Text="{Binding answer, Mode=TwoWay}" FontSize="Large" FontAttributes="Bold"/>
+                                    <Label Text="{Binding answerUser, Mode=TwoWay}" FontSize="Large" FontAttributes="Bold" Margin="0,0,10,0"/>
                                     <Label Text="{Binding question, Mode=TwoWay}" FontSize="Small"/>
                                 </StackLayout>
                             </ViewCell>

@@ -17,13 +17,14 @@ namespace App_Prueba.ViewModel
         public INavigation Navigation { get; set; }
 
         private int _preguntaActual = 0;
-        private string _categoria, _pregunta, _posicion;
+        private string _categoria, _pregunta, _posicion, _respuestaCorrecta;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
 
         public int PreguntaActual{ get { return _preguntaActual; } set { _preguntaActual = value; } }
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string Posicion { get { return _posicion; } set { SetValue(ref _posicion, value); } }
+        public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
@@ -50,7 +51,7 @@ namespace App_Prueba.ViewModel
                     category = pregunta.category,
                     type = pregunta.type,
                     difficulty = pregunta.difficulty,
-                    question = pregunta.question.Replace("&quot;", "'"),
+                    question = pregunta.question.Replace("&quot;", "'").Replace("&#039;","'").Replace("&rdquo;", "!").Replace(";H&ocirc;", "ô").Replace(" &Idquo;", ": ").Replace("&epsilon;", "ε"),
                     correct_answer = pregunta.correct_answer,
                     incorrect_answers = pregunta.incorrect_answers
                 });
@@ -58,6 +59,7 @@ namespace App_Prueba.ViewModel
 
             this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
             this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
+            this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
             this.Posicion = $"{this.PreguntaActual + 1} / 10";
 
         }
@@ -70,18 +72,19 @@ namespace App_Prueba.ViewModel
             this.PreguntaActual++;
             this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
             this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
+            this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
             this.Posicion = $"{this.PreguntaActual + 1} / 10";
         }
 
         public void RespVerdadera()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answer = "+" });
+            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answerUser = "+", answerCorrect = this.RespuestaCorrecta == "True" ? "+" : "-" });
             //Application.Current.MainPage.DisplayAlert("Error", "msj", "OK");
             this.LoadNextQuestion();
         }
         public async void RespFalsa()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answer = "-" });
+            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answerUser = "-", answerCorrect = this.RespuestaCorrecta == "True" ? "+" : "-" });
             this.LoadNextQuestion();
         }
 
