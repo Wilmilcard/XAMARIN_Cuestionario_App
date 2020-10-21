@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Welcome to the Trivia Challenge!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                <Label x:Name="txt" Text="Welcome to the Trivia Challenge!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
             <Label Text="You will be presented with 10 True of False questions" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Margin="100"/>
             <Label Text="Can you score 100%?" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />

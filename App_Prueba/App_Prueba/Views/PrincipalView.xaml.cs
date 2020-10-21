@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App_Prueba.Clases;
+using App_Prueba.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,18 @@ namespace App_Prueba.Views
         public PrincipalView()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient rest = new RestClient();
+                var rpta = await rest.Get<Questions>();
+                if (rpta != null)
+                    this.txt.Text = rpta.results[2].category;
+            });
         }
 
         async void Button_Clicked(object sender, EventArgs e)
