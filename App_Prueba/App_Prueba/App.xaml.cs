@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App_Prueba.Views;
 
 namespace App_Prueba
 {
@@ -10,7 +11,7 @@ namespace App_Prueba
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new PrincipalView());
         }
 
         protected override void OnStart()

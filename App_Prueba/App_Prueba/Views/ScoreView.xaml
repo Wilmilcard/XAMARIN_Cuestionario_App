@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Prueba.Views.ScoreView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="You scored" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            <Label Text="3 / 10" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            
+            <CollectionView x:Name="ScoreList" ItemsSource="{Binding TipsList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Padding="20" WidthRequest="150">
+                                <Label Text="+"  LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Medium" />
+                                <Label Text="Unturned originally started as a Roblox game." LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <!--<StackLayout Orientation="Horizontal">
+                                <Button Text="Ver" Clicked="SelectedTip" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White"/>
+                                <Button Text="Borrar" Clicked="DeleteTip" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White"/>
+                            </StackLayout>-->
+                            <Button Margin="20" Text="BEGIN" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource Verde}" Clicked="Button_Clicked" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

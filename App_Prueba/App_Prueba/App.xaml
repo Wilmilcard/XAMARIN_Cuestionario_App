@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.App">
     <Application.Resources>
-
+        <Color x:Key="NavigationPrimary">#2196F3</Color>
+        <Color x:Key="Rojo">#FF5733</Color>
+        <Color x:Key="Verde">#9ACD32</Color>
+        <Color x:Key="Blanco">white</Color>
     </Application.Resources>
 </Application>

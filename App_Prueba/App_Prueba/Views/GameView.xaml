@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Prueba.Views.GameView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Categoria" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Unturned originally started as a Roblox game." HorizontalTextAlignment="Center" FontSize="Large" VerticalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
+                <Button Text="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White"/>
+                <Button Text="False" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White"/>
+            </StackLayout>
+            <Label Text="2 of 10" HorizontalTextAlignment="Center" FontSize="Small" Margin="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
