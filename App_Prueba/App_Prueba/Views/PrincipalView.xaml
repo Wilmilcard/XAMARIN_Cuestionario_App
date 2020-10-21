@@ -2,10 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.PrincipalView">
-    <!--<ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>-->
-    
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
@@ -14,7 +10,6 @@
             <Label Text="You will be presented with 10 True of False questions" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Margin="100"/>
             <Label Text="Can you score 100%?" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
             <Button Margin="20" Text="BEGIN" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource Verde}" Clicked="Button_Clicked" />
-            <Button Text="score" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource NavigationPrimary}" Clicked="Button_Clicked_2" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,31 +19,9 @@ namespace App_Prueba.Views
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                RestClient rest = new RestClient();
-                var rpta = await rest.Get<Result>();
-                if (rpta != null)
-                    this.txt.Text = rpta.results[2].category;
-            });
-        }
-
         async void Button_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new GameView
-            //{
-            //    BindingContext = new GameView()
-            //});
-
-            await Navigation.PushAsync(new NavigationPage(new GameView()));
-        }
-
-        async void Button_Clicked_2(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NavigationPage(new ScoreView()));
+            await Navigation.PushModalAsync(new NavigationPage(new GameView()));
         }
     }
 }

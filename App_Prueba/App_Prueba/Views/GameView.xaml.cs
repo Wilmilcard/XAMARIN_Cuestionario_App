@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Prueba.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,19 @@ namespace App_Prueba.Views
         public GameView()
         {
             InitializeComponent();
+            BindingContext = new GameViewModel();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            if(this.txtCount.Text == "10 / 10")
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            if (this.txtCount.Text == "10 / 10")
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
     }
 }

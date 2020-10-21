@@ -4,28 +4,20 @@
              x:Class="App_Prueba.Views.GameView"
              xmlns:vm="clr-namespace:App_Prueba.ViewModel"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.Resources>
-        <vm:GameViewModel x:Key="GameVM"/>
-    </ContentPage.Resources>
 
-    <ContentPage.BindingContext>
-        <vm:BaseViewModel/>
-    </ContentPage.BindingContext>
-    
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout.BindingContext>
-                <vm:BaseViewModel/>
-            </StackLayout.BindingContext>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="{Binding Categoria, Mode=TwoWay}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            <Label Text="Unturned originally started as a Roblox game." HorizontalTextAlignment="Center" FontSize="Large" VerticalOptions="CenterAndExpand"/>
-            <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
-                <Button Text="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White"/>
-                <Button Text="False" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White"/>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="12" HeightRequest="80">
+                    <Label Text="{Binding Categoria, Mode=TwoWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="30" FontAttributes="Bold"/>
+                </Frame>
+                <Label Text="{Binding Pregunta, Mode=TwoWay}" HorizontalTextAlignment="Center" FontSize="Large" VerticalOptions="CenterAndExpand" Margin="20"/>
+                <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
+                    <Button Text="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White" Command="{Binding AnswerTCommand}" Clicked="Button_Clicked_1"/>
+                    <Button Text="False" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White" Command="{Binding AnswerFCommand}" Clicked="Button_Clicked"/>
+                </StackLayout>
+                <Label x:Name="txtCount" Text="{Binding Posicion, Mode=TwoWay}" HorizontalTextAlignment="Center" FontSize="Small" Margin="10"/>
             </StackLayout>
-            <Label Text="2 of 10" HorizontalTextAlignment="Center" FontSize="Small" Margin="10"/>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
