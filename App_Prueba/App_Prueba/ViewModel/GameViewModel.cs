@@ -19,20 +19,19 @@ namespace App_Prueba.ViewModel
         private int _preguntaActual = 0;
         private string _categoria, _pregunta, _posicion;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
-        private ObservableCollection<Answer> _listaRespuestas = new ObservableCollection<Answer>();
 
         public int PreguntaActual{ get { return _preguntaActual; } set { _preguntaActual = value; } }
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string Posicion { get { return _posicion; } set { SetValue(ref _posicion, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
-        public ObservableCollection<Answer> ListaRespuestas { get { return _listaRespuestas; } set { _listaRespuestas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
 
 
         public GameViewModel()
         {
+            ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.GetAll();
         }
 
@@ -65,7 +64,7 @@ namespace App_Prueba.ViewModel
 
         public void LoadNextQuestion()
         {
-            if (this.PreguntaActual >= 10)
+            if (this.PreguntaActual >= 9)
                 return;
 
             this.PreguntaActual++;
@@ -76,13 +75,13 @@ namespace App_Prueba.ViewModel
 
         public void RespVerdadera()
         {
-            this.ListaRespuestas.Add(new Answer() { id_question = this.PreguntaActual, answer = "True" });
+            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answer = "+" });
             //Application.Current.MainPage.DisplayAlert("Error", "msj", "OK");
             this.LoadNextQuestion();
         }
         public async void RespFalsa()
         {
-            this.ListaRespuestas.Add(new Answer() { id_question = this.PreguntaActual, answer = "False" });
+            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answer = "-" });
             this.LoadNextQuestion();
         }
 

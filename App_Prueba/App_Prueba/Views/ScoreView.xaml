@@ -8,28 +8,21 @@
         <StackLayout>
             <Label Text="You scored" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
             <Label Text="3 / 10" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-            
-            <CollectionView x:Name="ScoreList" ItemsSource="{Binding TipsList}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout Padding="20" WidthRequest="150">
-                                <Label Text="+"  LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Medium" />
-                                <Label Text="Unturned originally started as a Roblox game." LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
-                            <!--<StackLayout Orientation="Horizontal">
-                                <Button Text="Ver" Clicked="SelectedTip" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White"/>
-                                <Button Text="Borrar" Clicked="DeleteTip" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White"/>
-                            </StackLayout>-->
-                            <Button Margin="20" Text="BEGIN" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource Verde}" Clicked="Button_Clicked" />
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            
+            <ScrollView>
+                <ListView ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" RowHeight="80" Margin="10" SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Margin="15">
+                                    <Label Text="{Binding answer, Mode=TwoWay}" FontSize="Large" FontAttributes="Bold"/>
+                                    <Label Text="{Binding question, Mode=TwoWay}" FontSize="Small"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button Margin="20" Text="PLAY AGAIN?" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource NavigationPrimary}" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

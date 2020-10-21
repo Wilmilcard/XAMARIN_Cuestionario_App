@@ -2,11 +2,15 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App_Prueba.Views;
+using App_Prueba.Models;
+using System.Collections.ObjectModel;
 
 namespace App_Prueba
 {
     public partial class App : Application
     {
+        public ObservableCollection<Answer> Respuestas = new ObservableCollection<Answer>();
+
         public App()
         {
             InitializeComponent();

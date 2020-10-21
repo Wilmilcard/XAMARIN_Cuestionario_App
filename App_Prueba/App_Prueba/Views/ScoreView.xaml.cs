@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Prueba.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace App_Prueba.Views
         public ScoreView()
         {
             InitializeComponent();
+            BindingContext = new ScoreViewModel();
         }
 
         async void Button_Clicked(object sender, EventArgs e)

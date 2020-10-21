@@ -7,6 +7,7 @@ namespace App_Prueba.Models
     public class Answer
     {
         public int id_question { get; set; }
+        public string question { get; set; }
         public string answer { get; set; }
     }
 }
