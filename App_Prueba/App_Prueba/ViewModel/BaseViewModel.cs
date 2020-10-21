@@ -8,6 +8,7 @@ namespace App_Prueba.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+
         bool isBusy = false;
         public bool IsBusy
         {

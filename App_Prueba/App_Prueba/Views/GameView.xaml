@@ -7,11 +7,18 @@
     <ContentPage.Resources>
         <vm:GameViewModel x:Key="GameVM"/>
     </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:BaseViewModel/>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout.BindingContext>
+                <vm:BaseViewModel/>
+            </StackLayout.BindingContext>
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Categoria" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                <Label Text="{Binding Categoria, Mode=TwoWay}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
             <Label Text="Unturned originally started as a Roblox game." HorizontalTextAlignment="Center" FontSize="Large" VerticalOptions="CenterAndExpand"/>
             <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
