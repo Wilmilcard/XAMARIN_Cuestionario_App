@@ -9,7 +9,7 @@
             <Label Text="You scored" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
             <Label Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
             <ScrollView>
-                <ListView ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" RowHeight="80" Margin="10" SeparatorVisibility="Default">
+                <ListView ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" RowHeight="90" Margin="10" SeparatorVisibility="Default">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
