@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="App_Prueba.Views.PrincipalView">
 
 
@@ -27,6 +27,7 @@
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                 <Label x:Name="txt" Text="Welcome to the Trivia Challenge!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
+            <!--<lottie:AnimationView x:Name="lottie" Animation="work.json" AutoPlay="True" WidthRequest="300" HeightRequest="300" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>-->
             <Label Text="You will be presented with 10 True of False questions" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Margin="100"/>
             <Label Text="Can you score 100%?" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
             <Button x:Name="FloatingActionButton" Margin="20" Text="BEGIN" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource Verde}" Clicked="Button_Clicked" />
