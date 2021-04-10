@@ -4,7 +4,6 @@
              x:Class="App_Prueba.Views.GameView"
              xmlns:vm="clr-namespace:App_Prueba.ViewModel" 
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
-             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
