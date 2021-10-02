@@ -12,6 +12,9 @@
                 <xamanimation:TranslateToAnimation Duration="0" TranslateY="200" />
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#08142a" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -23,14 +26,39 @@
     </ContentPage.Triggers>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label x:Name="txt" Text="Welcome to the Trivia Challenge!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <StackLayout Padding="20">
+            <Frame BackgroundColor="Azure"
+                    Padding="24" 
+                    CornerRadius="0">
+                
+                <Label FontFamily="{StaticResource BoldFont}" 
+                       Text="Welcome to the Trivia Challenge!" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="36"/>
+                
             </Frame>
-            <!--<lottie:AnimationView x:Name="lottie" Animation="work.json" AutoPlay="True" WidthRequest="300" HeightRequest="300" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>-->
-            <Label Text="You will be presented with 10 True of False questions" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Margin="100"/>
-            <Label Text="Can you score 100%?" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="FloatingActionButton" Margin="20" Text="BEGIN" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource Verde}" Clicked="Button_Clicked" />
+            
+            <Label Text="You will be presented with 10 True of False questions" 
+                   FontFamily="{StaticResource NormalFont}" 
+                   FontSize="Large" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center" 
+                   Margin="100"/>
+            
+            <Label Text="Can you score 100%?" 
+                   FontFamily="{StaticResource NormalFont}" 
+                   FontSize="Large" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Button x:Name="FloatingActionButton" 
+                    FontFamily="{StaticResource BoldFont}" 
+                    Margin="20" 
+                    Text="BEGIN" 
+                    TextColor="{StaticResource Blanco}" 
+                    BackgroundColor="{StaticResource Verde}" 
+                    Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -7,5 +7,16 @@
         <Color x:Key="Rojo">#FF5733</Color>
         <Color x:Key="Verde">#9ACD32</Color>
         <Color x:Key="Blanco">white</Color>
+
+        <ResourceDictionary>
+            <OnPlatform x:Key="NormalFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Montserrat-Regular.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Regular" />
+            </OnPlatform>
+            <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Montserrat-Bold.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Bold" />
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
