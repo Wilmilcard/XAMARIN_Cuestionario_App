@@ -61,8 +61,8 @@ Se clona el repositorio y se hace un debug desde un emulador o un celular en mod
 
 ### Una vez se tengan las herramientas instaladas:
 
-1. Clonar el repositorio
-2. Ejecutar el proyecto
+1. Clonar el repositorio.
+2. Ejecutar el proyecto.
 
 
 Este programa puede ir mejorando y cambiando, pero mientras tanto esta es una muestra de lo que puede hacer 🛴
