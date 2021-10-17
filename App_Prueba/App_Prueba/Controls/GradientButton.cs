@@ -95,12 +95,16 @@ namespace App_Prueba.Controls
             set => SetValue(TextProperty, value);
         }
 
+
         private static void OnPropertyChangedInvalidate(BindableObject bindable, object oldvalue, object newvalue)
         {
-            var control = (GradientToogleButton)bindable;
-
-            if (oldvalue != newvalue)
-                control.InvalidateSurface();
+            if(bindable == null)
+            {
+                var control = (GradientToogleButton)bindable;
+                
+                if (oldvalue != newvalue)
+                    control.InvalidateSurface();
+            }
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              x:Class="App_Prueba.Views.PrincipalView">
 
 
@@ -45,13 +46,42 @@
                    HorizontalOptions="CenterAndExpand" 
                    HorizontalTextAlignment="Center" 
                    Margin="100"/>
-            
+
             <Label Text="Can you score 100%?" 
                    FontFamily="{StaticResource NormalFont}" 
                    FontSize="Large" 
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
             
+            <controls:GradientButton
+                   Margin="0,25,0,0"
+                   CornerRadius="18"
+                   FontSize="25"
+                   GradientEndColor="#a98af6"
+                   GradientStartColor="#398efe"
+                   HeightRequest="50"
+                   WidthRequest="300"
+                   HorizontalOptions="Center"
+                   Text="Begin"
+                   TextColor="White"
+                   Clicked="Button_Clicked"/>
+
+            <controls:GradientToogleButton
+                   Margin="0,25,0,0"
+                   AlternativeTextColor="#0463E1"
+                   BarBackgroundColor="#bcd8f6"
+                   CornerRadius="18"
+                   FontSize="15"
+                   GradientEndColor="#a98af6"
+                   GradientStartColor="#398efe"
+                   HeightRequest="32"
+                   HorizontalOptions="Center"
+                   IsSelected="{Binding Following}"
+                   SelectedText="Following"
+                   TextColor="White"
+                   UnselectedText="Follow"
+                   WidthRequest="100" />
+
             <Button x:Name="FloatingActionButton" 
                     FontFamily="{StaticResource BoldFont}" 
                     Margin="20" 
@@ -59,6 +89,8 @@
                     TextColor="{StaticResource Blanco}" 
                     BackgroundColor="{StaticResource Verde}" 
                     Clicked="Button_Clicked" />
+
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
