@@ -29,17 +29,24 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Frame BackgroundColor="Azure"
-                    Padding="24" 
-                    CornerRadius="0">
-                
-                <Label FontFamily="{StaticResource BoldFont}" 
-                       Text="Welcome to the Trivia Challenge!" 
-                       HorizontalTextAlignment="Center" 
-                       FontSize="36"/>
-                
-            </Frame>
             
+            <controls:GradientToogleButton
+                   Margin="0,25,0,0"
+                   AlternativeTextColor="#0463E1"
+                   BarBackgroundColor="#bcd8f6"
+                   CornerRadius="18"
+                   FontSize="22"
+                   GradientEndColor="#a98af6"
+                   GradientStartColor="#398efe"
+                   HorizontalOptions="Center"
+                   IsSelected="False"
+                   SelectedText="Following"
+                   TextColor="White"
+                   UnselectedText="Welcome to the Trivia Challenge!"
+                   HeightRequest="100"
+                   WidthRequest="350"/>
+
+
             <Label Text="You will be presented with 10 True of False questions" 
                    FontFamily="{StaticResource NormalFont}" 
                    FontSize="Large" 
@@ -58,7 +65,7 @@
                    x:Name="FloatingActionButton" 
                    Margin="0,25,0,0"
                    CornerRadius="18"
-                   FontSize="25"
+                   FontSize="20"
                    GradientEndColor="#a98af6"
                    GradientStartColor="#398efe"
                    HeightRequest="50"
@@ -68,23 +75,6 @@
                    TextColor="White"
                    Clicked="Button_Clicked"/>
 
-            <!--<controls:GradientToogleButton
-                   Margin="0,25,0,0"
-                   AlternativeTextColor="#0463E1"
-                   BarBackgroundColor="#bcd8f6"
-                   CornerRadius="18"
-                   FontSize="15"
-                   GradientEndColor="#a98af6"
-                   GradientStartColor="#398efe"
-                   HeightRequest="32"
-                   HorizontalOptions="Center"
-                   IsSelected="{Binding Following}"
-                   SelectedText="Following"
-                   TextColor="White"
-                   UnselectedText="Follow"
-                   WidthRequest="100" />-->
-
-           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

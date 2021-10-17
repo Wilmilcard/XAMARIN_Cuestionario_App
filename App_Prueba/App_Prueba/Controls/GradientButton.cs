@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SkiaSharp;
-using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 using System.Windows.Input;
 
@@ -17,7 +16,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty CornerRadiusProperty = BindableProperty.Create(nameof(CornerRadius), typeof(float),
-            typeof(GradientToogleButton), 5f, BindingMode.OneWay,
+            typeof(GradientButton), 5f, BindingMode.OneWay,
             validateValue: (_, value) => value != null && (float)value >= 0,
             propertyChanged: OnPropertyChangedInvalidate);
 
@@ -28,7 +27,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty FontSizeProperty = BindableProperty.Create(nameof(FontSize), typeof(float),
-            typeof(GradientToogleButton), 12f, BindingMode.OneWay,
+            typeof(GradientButton), 12f, BindingMode.OneWay,
             validateValue: (_, value) => value != null && (float)value >= 0,
             propertyChanged: OnPropertyChangedInvalidate);
 
@@ -39,7 +38,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty GradientStartColorProperty = BindableProperty.Create(nameof(GradientStartColor), typeof(Color),
-            typeof(GradientToogleButton), Color.Purple, BindingMode.OneWay,
+            typeof(GradientButton), Color.Purple, BindingMode.OneWay,
             validateValue: (_, value) => value != null, propertyChanged: OnPropertyChangedInvalidate);
 
         public Color GradientStartColor
@@ -49,7 +48,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty GradientEndColorProperty = BindableProperty.Create(nameof(GradientEndColor), typeof(Color),
-            typeof(GradientToogleButton), Color.Blue, BindingMode.OneWay,
+            typeof(GradientButton), Color.Blue, BindingMode.OneWay,
             validateValue: (_, value) => value != null, propertyChanged: OnPropertyChangedInvalidate);
 
         public Color GradientEndColor
@@ -59,7 +58,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color),
-            typeof(GradientToogleButton), Color.Blue, BindingMode.OneWay,
+            typeof(GradientButton), Color.Blue, BindingMode.OneWay,
             validateValue: (_, value) => value != null, propertyChanged: OnPropertyChangedInvalidate);
 
         public Color TextColor
@@ -69,7 +68,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand),
-            typeof(GradientToogleButton), null, BindingMode.OneWay);
+            typeof(GradientButton), null, BindingMode.OneWay);
 
         public ICommand Command
         {
@@ -78,7 +77,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object),
-            typeof(GradientToogleButton), null, BindingMode.OneWay);
+            typeof(GradientButton), null, BindingMode.OneWay);
 
         public object CommandParameter
         {
@@ -87,7 +86,7 @@ namespace App_Prueba.Controls
         }
 
         public static BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string),
-            typeof(GradientToogleButton), string.Empty, BindingMode.OneWay, propertyChanged: OnPropertyChangedInvalidate);
+            typeof(GradientButton), string.Empty, BindingMode.OneWay, propertyChanged: OnPropertyChangedInvalidate);
 
         public string Text
         {
@@ -95,6 +94,14 @@ namespace App_Prueba.Controls
             set => SetValue(TextProperty, value);
         }
 
+        public static BindableProperty FontFamilyProperty = BindableProperty.Create(nameof(FontFamily), typeof(string),
+            typeof(GradientButton), Font.Default.FontFamily, BindingMode.OneWay, propertyChanged: OnPropertyChangedInvalidate);
+
+        public string FontFamily
+        {
+            get => (string)GetValue(FontFamilyProperty);
+            set => SetValue(FontFamilyProperty, value);
+        }
 
         private static void OnPropertyChangedInvalidate(BindableObject bindable, object oldvalue, object newvalue)
         {
@@ -132,12 +139,7 @@ namespace App_Prueba.Controls
 
             var backgroundBar = new SKRoundRect(controlRect, cornerRadius, cornerRadius);
 
-            using (var paint = new SKPaint()
-            {
-                IsAntialias = true,
-                Color = Color.White.ToSKColor(),
-                Style = SKPaintStyle.StrokeAndFill
-            })
+            using (var paint = new SKPaint() { IsAntialias = true, Color = Color.White.ToSKColor(), Style = SKPaintStyle.StrokeAndFill })
             {
                 float y = info.Height;
 
@@ -196,5 +198,6 @@ namespace App_Prueba.Controls
         }
 
         public event EventHandler<TappedEventArgs> Clicked;
+
     }
 }
