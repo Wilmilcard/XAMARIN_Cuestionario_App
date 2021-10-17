@@ -27,7 +27,16 @@
     </ContentPage.Triggers>
 
     <ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout Padding="10">
+
+            <Button 
+                Text="&#xf05a;" 
+                HorizontalOptions="End" 
+                FontFamily="{StaticResource FontAwesomeSolid}" 
+                BackgroundColor="Transparent" 
+                FontSize="30" 
+                TextColor="{StaticResource Azul}"
+                Clicked="Button_Clicked_1"/>
             
             <controls:GradientToogleButton
                 x:Name="FloatingActionButton2"
