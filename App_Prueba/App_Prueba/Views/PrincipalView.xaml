@@ -34,7 +34,7 @@
                 HorizontalOptions="End" 
                 FontFamily="{StaticResource FontAwesomeSolid}" 
                 BackgroundColor="Transparent" 
-                FontSize="30" 
+                FontSize="18" 
                 TextColor="{StaticResource Azul}"
                 Clicked="Button_Clicked_1"/>
             
@@ -49,19 +49,12 @@
                 GradientStartColor="{StaticResource Violeta}"
                 HorizontalOptions="Center"
                 IsSelected="False"
-                SelectedText="Developr in Xamarin.Forms"
+                SelectedText="Develop by Nevergate.com.co"
                 TextColor="White"
                 UnselectedText="Welcome to the Trivia Challenge!"
                 HeightRequest="100"
                 WidthRequest="350"/>
 
-
-            <Image
-                HeightRequest="250"
-                Source="gato1.gif"
-                IsAnimationPlaying="true"
-                VerticalOptions="Center" />
-            
             <Label 
                 Text="You will be presented with 10 True of False questions" 
                 FontFamily="{StaticResource NormalFont}" 
@@ -69,7 +62,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                 HorizontalTextAlignment="Center" 
-                Margin="50,100,50,100"/>
+                Margin="20,100,40,100"/>
 
             <Label 
                 Text="Can you score 100%?" 
@@ -80,7 +73,7 @@
             
             <controls:GradientButton
                 x:Name="FloatingActionButton" 
-                Margin="0,25,0,0"
+                Margin="0,20,0,0"
                 CornerRadius="18"
                 FontSize="20"
                 GradientEndColor="{StaticResource Azul}"
@@ -91,21 +84,6 @@
                 Text="Begin"
                 TextColor="White"
                 Clicked="Button_Clicked"/>
-
-            <!--<StackLayout
-                Margin="10">
-                <Label 
-                    Text="Power By" 
-                    FontFamily="{StaticResource NormalFont}" 
-                    FontSize="Default" 
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
-
-                <Image
-                    HeightRequest="50"
-                    Source="nevergate.png"
-                    VerticalOptions="Center" />
-            </StackLayout>-->
             
         </StackLayout>
     </ContentPage.Content>

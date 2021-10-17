@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App_Prueba.Views.CreditsView">
+             x:Class="App_Prueba.Views.CreditsView"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout
+                Margin="10">
+                
+                <Image
+                    HeightRequest="150"
+                    Source="gato1.gif"
+                    IsAnimationPlaying="true"
+                    VerticalOptions="Center" />
+                
+                <Label 
+                    Text="Power By" 
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Caption" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Image
+                    HeightRequest="100"
+                    Source="nevergate.png"
+                    VerticalOptions="Center" />
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

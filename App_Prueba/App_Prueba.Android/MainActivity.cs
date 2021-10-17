@@ -18,7 +18,7 @@ namespace App_Prueba.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#a98af6").ToAndroid());
+            this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#0463E1").ToAndroid());
 
             base.OnCreate(savedInstanceState);
             //Lottie.Forms.AnimationView.Init();
