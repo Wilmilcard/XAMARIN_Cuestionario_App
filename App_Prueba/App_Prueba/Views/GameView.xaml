@@ -100,10 +100,10 @@
                 <controls:GradientProgressBar
                     AlternativeTextColor="#0463E1"
                     BarBackgroundColor="#bcd8f6"
-                    CornerRadius="6"
+                    CornerRadius="0"
                     FontSize="18"
-                    GradientEndColor="#a98af6"
-                    GradientStartColor="#398efe"
+                    GradientEndColor="{StaticResource Violeta}"
+                    GradientStartColor="{StaticResource Azul}"
                     HeightRequest="30"
                     Percentage="{Binding PorcentajeBar}"
                     TextColor="White" />
