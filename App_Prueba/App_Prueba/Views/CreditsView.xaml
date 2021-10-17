@@ -14,7 +14,14 @@
                     Source="gato1.gif"
                     IsAnimationPlaying="true"
                     VerticalOptions="Center" />
-                
+
+                <Label 
+                    Text="Aplicacion creada por Juan Leon en Xamarin.Forms" 
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Default" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
                 <Label 
                     Text="Power By" 
                     FontFamily="{StaticResource NormalFont}" 
