@@ -3,8 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.GameView"
              xmlns:vm="clr-namespace:App_Prueba.ViewModel" 
-             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter"  Target="{x:Reference FloatingActionButton}">
+                <xamanimation:TranslateToAnimation Duration="130" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter2"  Target="{x:Reference FloatingActionButton2}">
+                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#08142a" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter}"/>
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter2}"/>
+        </EventTrigger>
+    </ContentPage.Triggers>
 
     <ContentPage.Content>
         <ScrollView>
@@ -16,37 +42,53 @@
                     <Label Text="{Binding Categoria, Mode=TwoWay}" 
                            HorizontalTextAlignment="Center" 
                            VerticalTextAlignment="Center" 
+                           FontFamily="{StaticResource BoldFont}"
                            TextColor="White" 
-                           FontSize="30" 
+                           FontSize="20" 
                            FontAttributes="Bold"/>
                 </Frame>
 
                 <Label Text="{Binding Pregunta, Mode=TwoWay}" 
                        HorizontalTextAlignment="Center" 
                        FontSize="Large" 
+                       FontFamily="{StaticResource NormalFont}"
                        VerticalOptions="CenterAndExpand" 
-                       Margin="20"/>
+                       Margin="25"/>
                 
                 <StackLayout Orientation="Horizontal" 
                              Margin="20" 
                              HorizontalOptions="Center">
                     
-                    <Button Text="True" 
-                            HorizontalOptions="Center" 
-                            VerticalOptions="Center" 
-                            BackgroundColor="{StaticResource NavigationPrimary}" 
-                            TextColor="White" 
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton"
+                            Margin="0,25,0,0"
+                            CornerRadius="18"
+                            FontSize="20"
+                            GradientEndColor="{StaticResource Violeta}"
+                            GradientStartColor="{StaticResource Azul}"
+                            HeightRequest="50"
+                            WidthRequest="150"
+                            HorizontalOptions="Center"
+                            Text="True"
+                            TextColor="White"
                             Command="{Binding AnswerTCommand}" 
                             Clicked="Button_Clicked_1"/>
-                    
-                    <Button Text="False" 
-                            HorizontalOptions="Center" 
-                            VerticalOptions="Center" 
-                            BackgroundColor="{StaticResource Rojo}" 
-                            TextColor="White" 
+
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton2"
+                            Margin="0,25,0,0"
+                            CornerRadius="18"
+                            FontSize="20"
+                            GradientEndColor="{StaticResource Naranja}"
+                            GradientStartColor="{StaticResource Rojo}"
+                            HeightRequest="50"
+                            WidthRequest="150"
+                            HorizontalOptions="Center"
+                            Text="False"
+                            TextColor="White"
                             Command="{Binding AnswerFCommand}" 
                             Clicked="Button_Clicked"/>
-                
+
                 </StackLayout>
                 
                 <Label x:Name="txtCount" 

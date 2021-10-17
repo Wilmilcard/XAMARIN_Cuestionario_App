@@ -8,6 +8,9 @@
         <Color x:Key="Rojo">#FF5733</Color>
         <Color x:Key="Verde">#9ACD32</Color>
         <Color x:Key="Blanco">white</Color>
+        <Color x:Key="Naranja">#ff8000</Color>
+        <Color x:Key="Violeta">#a98af6</Color>
+        <Color x:Key="Azul">#398efe</Color>
 
         <ResourceDictionary>
             <OnPlatform x:Key="NormalFont" x:TypeArguments="x:String">

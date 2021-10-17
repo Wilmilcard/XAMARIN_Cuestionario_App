@@ -10,8 +10,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <xamanimation:StoryBoard x:Key="FloatingButtonEnter"  Target="{x:Reference FloatingActionButton}">
-                <!--<xamanimation:TranslateToAnimation x:Key="appear" Duration="200" TranslateY="50" Target="{x:Reference btnFalse}"/>-->
-                <xamanimation:TranslateToAnimation Duration="0" TranslateY="200" />
+                <xamanimation:TranslateToAnimation Duration="260" TranslateY="200" />
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
             <Style TargetType="Label">
@@ -31,6 +30,7 @@
         <StackLayout Padding="20">
             
             <controls:GradientToogleButton
+                   x:Name="FloatingActionButton2"
                    Margin="0,25,0,0"
                    AlternativeTextColor="#0463E1"
                    BarBackgroundColor="#bcd8f6"
