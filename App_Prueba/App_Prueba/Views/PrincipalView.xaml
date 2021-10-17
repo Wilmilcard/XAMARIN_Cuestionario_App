@@ -54,6 +54,7 @@
                    HorizontalOptions="CenterAndExpand" />
             
             <controls:GradientButton
+                   x:Name="FloatingActionButton" 
                    Margin="0,25,0,0"
                    CornerRadius="18"
                    FontSize="25"
@@ -66,7 +67,7 @@
                    TextColor="White"
                    Clicked="Button_Clicked"/>
 
-            <controls:GradientToogleButton
+            <!--<controls:GradientToogleButton
                    Margin="0,25,0,0"
                    AlternativeTextColor="#0463E1"
                    BarBackgroundColor="#bcd8f6"
@@ -88,7 +89,7 @@
                     Text="BEGIN" 
                     TextColor="{StaticResource Blanco}" 
                     BackgroundColor="{StaticResource Verde}" 
-                    Clicked="Button_Clicked" />
+                    Clicked="Button_Clicked" />-->
 
            
         </StackLayout>
