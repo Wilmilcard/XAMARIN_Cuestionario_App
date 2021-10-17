@@ -17,13 +17,16 @@ namespace App_Prueba.ViewModel
         public INavigation Navigation { get; set; }
 
         private int _preguntaActual = 0;
-        private string _categoria, _pregunta, _posicion, _respuestaCorrecta;
+        private double _porcentaje = 0.1;
+        private string _categoria, _pregunta, _posicion, _respuestaCorrecta, _porcentajeBar;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
 
         public int PreguntaActual{ get { return _preguntaActual; } set { _preguntaActual = value; } }
+        public double Porcentaje { get { return _porcentaje; } set { _porcentaje = value; } }
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string Posicion { get { return _posicion; } set { SetValue(ref _posicion, value); } }
+        public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
@@ -34,6 +37,7 @@ namespace App_Prueba.ViewModel
         {
             ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.GetAll();
+            this.PorcentajeBar = "0.1";
         }
 
         public async void GetAll()
@@ -74,12 +78,14 @@ namespace App_Prueba.ViewModel
             this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
             this.Posicion = $"{this.PreguntaActual + 1} / 10";
+
+            this.Porcentaje += 0.1;
+            this.PorcentajeBar = Porcentaje.ToString();
         }
 
         public void RespVerdadera()
         {
             ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answerUser = "+", answerCorrect = this.RespuestaCorrecta == "True" ? "+" : "-" });
-            //Application.Current.MainPage.DisplayAlert("Error", "msj", "OK");
             this.LoadNextQuestion();
         }
         public async void RespFalsa()

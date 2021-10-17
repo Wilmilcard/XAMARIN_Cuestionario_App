@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.GameView"
              xmlns:vm="clr-namespace:App_Prueba.ViewModel" 
-             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              NavigationPage.HasNavigationBar="False">
 
@@ -96,7 +96,18 @@
                        HorizontalTextAlignment="Center" 
                        FontSize="Small" 
                        Margin="10"/>
-                
+
+                <controls:GradientProgressBar
+                    AlternativeTextColor="#0463E1"
+                    BarBackgroundColor="#bcd8f6"
+                    CornerRadius="6"
+                    FontSize="18"
+                    GradientEndColor="#a98af6"
+                    GradientStartColor="#398efe"
+                    HeightRequest="30"
+                    Percentage="{Binding PorcentajeBar}"
+                    TextColor="White" />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

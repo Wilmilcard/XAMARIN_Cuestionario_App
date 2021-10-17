@@ -11,7 +11,7 @@ namespace App_Prueba.Controls
     public class GradientProgressBar : SKCanvasView
     {
         public static BindableProperty PercentageProperty = BindableProperty.Create(nameof(Percentage), typeof(float),
-            typeof(GradientProgressBar), 0f, BindingMode.OneWay,
+            typeof(GradientProgressBar), 0f, BindingMode.TwoWay,
             validateValue: (_, value) => value != null,
             propertyChanged: OnPropertyChangedInvalidate);
 
