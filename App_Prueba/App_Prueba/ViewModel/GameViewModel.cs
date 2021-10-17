@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Timers;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -32,18 +33,22 @@ namespace App_Prueba.ViewModel
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
 
+        Timer t = new Timer(500);
 
         public GameViewModel()
         {
             ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
-            this.GetAll();
             this.PorcentajeBar = "0.1";
+            
+            t.Elapsed += EventoElapsed;
+            t.Start();
         }
 
         public async void GetAll()
         {
             Result Preguntas = new Result();
             RestClient rest = new RestClient();
+
             var rpta = await rest.Get<Result>();
             if (rpta != null)
                 Preguntas = rpta;
@@ -81,6 +86,12 @@ namespace App_Prueba.ViewModel
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
+        }
+
+        public void EventoElapsed(object sender, ElapsedEventArgs e)
+        {
+            this.GetAll();
+            t.Stop();
         }
 
         public void RespVerdadera()
