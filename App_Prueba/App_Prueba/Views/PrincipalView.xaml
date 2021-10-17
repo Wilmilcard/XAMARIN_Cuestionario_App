@@ -30,51 +30,74 @@
         <StackLayout Padding="20">
             
             <controls:GradientToogleButton
-                   x:Name="FloatingActionButton2"
-                   Margin="0,25,0,0"
-                   AlternativeTextColor="#0463E1"
-                   BarBackgroundColor="#bcd8f6"
-                   CornerRadius="18"
-                   FontSize="22"
-                   GradientEndColor="#a98af6"
-                   GradientStartColor="#398efe"
-                   HorizontalOptions="Center"
-                   IsSelected="False"
-                   SelectedText="Following"
-                   TextColor="White"
-                   UnselectedText="Welcome to the Trivia Challenge!"
-                   HeightRequest="100"
-                   WidthRequest="350"/>
+                x:Name="FloatingActionButton2"
+                Margin="0,0,0,0"
+                AlternativeTextColor="#0463E1"
+                BarBackgroundColor="#bcd8f6"
+                CornerRadius="18"
+                FontSize="22"
+                GradientEndColor="{StaticResource Azul}"
+                GradientStartColor="{StaticResource Violeta}"
+                HorizontalOptions="Center"
+                IsSelected="False"
+                SelectedText="Developr in Xamarin.Forms"
+                TextColor="White"
+                UnselectedText="Welcome to the Trivia Challenge!"
+                HeightRequest="100"
+                WidthRequest="350"/>
 
 
-            <Label Text="You will be presented with 10 True of False questions" 
-                   FontFamily="{StaticResource NormalFont}" 
-                   FontSize="Large" 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" 
-                   HorizontalTextAlignment="Center" 
-                   Margin="100"/>
+            <Image
+                HeightRequest="250"
+                Source="gato1.gif"
+                IsAnimationPlaying="true"
+                VerticalOptions="Center" />
+            
+            <Label 
+                Text="You will be presented with 10 True of False questions" 
+                FontFamily="{StaticResource NormalFont}" 
+                FontSize="Large" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center" 
+                Margin="50,100,50,100"/>
 
-            <Label Text="Can you score 100%?" 
-                   FontFamily="{StaticResource NormalFont}" 
-                   FontSize="Large" 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+            <Label 
+                Text="Can you score 100%?" 
+                FontFamily="{StaticResource NormalFont}" 
+                FontSize="Large" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
             
             <controls:GradientButton
-                   x:Name="FloatingActionButton" 
-                   Margin="0,25,0,0"
-                   CornerRadius="18"
-                   FontSize="20"
-                   GradientEndColor="#a98af6"
-                   GradientStartColor="#398efe"
-                   HeightRequest="50"
-                   WidthRequest="300"
-                   HorizontalOptions="Center"
-                   Text="Begin"
-                   TextColor="White"
-                   Clicked="Button_Clicked"/>
+                x:Name="FloatingActionButton" 
+                Margin="0,25,0,0"
+                CornerRadius="18"
+                FontSize="20"
+                GradientEndColor="{StaticResource Azul}"
+                GradientStartColor="{StaticResource Violeta}"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Text="Begin"
+                TextColor="White"
+                Clicked="Button_Clicked"/>
 
+            <!--<StackLayout
+                Margin="10">
+                <Label 
+                    Text="Power By" 
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Default" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Image
+                    HeightRequest="50"
+                    Source="nevergate.png"
+                    VerticalOptions="Center" />
+            </StackLayout>-->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

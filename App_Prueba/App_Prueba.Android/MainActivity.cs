@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms.Platform.Android;
 
 namespace App_Prueba.Droid
 {
@@ -16,6 +17,8 @@ namespace App_Prueba.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#fff").ToAndroid());
 
             base.OnCreate(savedInstanceState);
             //Lottie.Forms.AnimationView.Init();
