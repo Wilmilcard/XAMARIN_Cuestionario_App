@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
+             NavigationPage.HasNavigationBar="False"
              x:Class="App_Prueba.Views.PrincipalView">
 
 
@@ -81,15 +82,7 @@
                    SelectedText="Following"
                    TextColor="White"
                    UnselectedText="Follow"
-                   WidthRequest="100" />
-
-            <Button x:Name="FloatingActionButton" 
-                    FontFamily="{StaticResource BoldFont}" 
-                    Margin="20" 
-                    Text="BEGIN" 
-                    TextColor="{StaticResource Blanco}" 
-                    BackgroundColor="{StaticResource Verde}" 
-                    Clicked="Button_Clicked" />-->
+                   WidthRequest="100" />-->
 
            
         </StackLayout>

@@ -21,8 +21,7 @@ namespace App_Prueba.Views
 
         async void Button_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new NavigationPage(new GameView()));
-            await DisplayAlert("Title", "Hola mundo", "cancel");
+            await Navigation.PushModalAsync(new NavigationPage(new GameView()));
         }
     }
 }

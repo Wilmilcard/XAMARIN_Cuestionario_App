@@ -9,15 +9,52 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Frame BackgroundColor="#2196F3" Padding="12" HeightRequest="80">
-                    <Label Text="{Binding Categoria, Mode=TwoWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="30" FontAttributes="Bold"/>
+                <Frame BackgroundColor="#2196F3" 
+                    Padding="12" 
+                    HeightRequest="80">
+
+                    <Label Text="{Binding Categoria, Mode=TwoWay}" 
+                           HorizontalTextAlignment="Center" 
+                           VerticalTextAlignment="Center" 
+                           TextColor="White" 
+                           FontSize="30" 
+                           FontAttributes="Bold"/>
                 </Frame>
-                <Label Text="{Binding Pregunta, Mode=TwoWay}" HorizontalTextAlignment="Center" FontSize="Large" VerticalOptions="CenterAndExpand" Margin="20"/>
-                <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
-                    <Button Text="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource NavigationPrimary}" TextColor="White" Command="{Binding AnswerTCommand}" Clicked="Button_Clicked_1"/>
-                    <Button Text="False" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Rojo}" TextColor="White" Command="{Binding AnswerFCommand}" Clicked="Button_Clicked"/>
+
+                <Label Text="{Binding Pregunta, Mode=TwoWay}" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="Large" 
+                       VerticalOptions="CenterAndExpand" 
+                       Margin="20"/>
+                
+                <StackLayout Orientation="Horizontal" 
+                             Margin="20" 
+                             HorizontalOptions="Center">
+                    
+                    <Button Text="True" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                            BackgroundColor="{StaticResource NavigationPrimary}" 
+                            TextColor="White" 
+                            Command="{Binding AnswerTCommand}" 
+                            Clicked="Button_Clicked_1"/>
+                    
+                    <Button Text="False" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                            BackgroundColor="{StaticResource Rojo}" 
+                            TextColor="White" 
+                            Command="{Binding AnswerFCommand}" 
+                            Clicked="Button_Clicked"/>
+                
                 </StackLayout>
-                <Label x:Name="txtCount" Text="{Binding Posicion, Mode=TwoWay}" HorizontalTextAlignment="Center" FontSize="Small" Margin="10"/>
+                
+                <Label x:Name="txtCount" 
+                       Text="{Binding Posicion, Mode=TwoWay}" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="Small" 
+                       Margin="10"/>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

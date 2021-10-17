@@ -21,7 +21,7 @@ namespace App_Prueba.Views
 
         async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new PrincipalView()));
+            await Navigation.PushAsync(new PrincipalView());
         }
     }
 }
