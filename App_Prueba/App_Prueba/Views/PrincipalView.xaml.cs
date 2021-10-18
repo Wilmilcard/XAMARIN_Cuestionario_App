@@ -28,5 +28,23 @@ namespace App_Prueba.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new CreditsView()));
         }
+
+        private void GradientToogleButton_Clicked(object sender, TappedEventArgs e)
+        {
+            this.choise2.IsSelected = false;
+            this.choise3.IsSelected = false;
+        }
+
+        private void GradientToogleButton_Clicked_1(object sender, TappedEventArgs e)
+        {
+            this.choise1.IsSelected = false;
+            this.choise3.IsSelected = false;
+        }
+
+        private void GradientToogleButton_Clicked_2(object sender, TappedEventArgs e)
+        {
+            this.choise1.IsSelected = false;
+            this.choise2.IsSelected = false;
+        }
     }
 }

@@ -48,10 +48,10 @@
                 GradientEndColor="{StaticResource Azul}"
                 GradientStartColor="{StaticResource Violeta}"
                 HorizontalOptions="Center"
-                IsSelected="False"
-                SelectedText="Develop by Nevergate.com.co"
+                IsSelected="True"
+                SelectedText="Welcome to the Trivia Challenge!"
                 TextColor="White"
-                UnselectedText="Welcome to the Trivia Challenge!"
+                UnselectedText="Just enjoy!"
                 HeightRequest="100"
                 WidthRequest="350"/>
 
@@ -64,17 +64,85 @@
                 HorizontalTextAlignment="Center" 
                 Margin="20,100,40,100"/>
 
+            <StackLayout>
+                <Label 
+                    Text="Choose difficulty" 
+                    FontFamily="{StaticResource BoldFont}" 
+                    FontSize="Default" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <controls:GradientToogleButton
+                        x:Name="choise1"
+                        Margin="0,25,0,0"
+                        AlternativeTextColor="#0463E1"
+                        BarBackgroundColor="#bcd8f6"
+                        CornerRadius="18"
+                        FontSize="15"
+                        GradientEndColor="{StaticResource Violeta}"
+                        GradientStartColor="{StaticResource Azul}"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        IsSelected="False"
+                        SelectedText="easy"
+                        TextColor="White"
+                        UnselectedText="easy"
+                        WidthRequest="100" 
+                        Clicked="GradientToogleButton_Clicked"/>
+                    
+                    <controls:GradientToogleButton
+                        x:Name="choise2"
+                        Margin="0,25,0,0"
+                        AlternativeTextColor="#0463E1"
+                        BarBackgroundColor="#bcd8f6"
+                        CornerRadius="18"
+                        FontSize="15"
+                        GradientEndColor="{StaticResource Verde}"
+                        GradientStartColor="{StaticResource VerdeOscuro}"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        IsSelected="True"
+                        SelectedText="medium"
+                        TextColor="White"
+                        UnselectedText="medium"
+                        WidthRequest="100" 
+                        Clicked="GradientToogleButton_Clicked_1"/>
+                    
+                    <controls:GradientToogleButton
+                        x:Name="choise3"
+                        Margin="0,25,0,0"
+                        AlternativeTextColor="#0463E1"
+                        BarBackgroundColor="#bcd8f6"
+                        CornerRadius="18"
+                        FontSize="15"
+                        GradientEndColor="{StaticResource Rojo}"
+                        GradientStartColor="{StaticResource Naranja}"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        IsSelected="False"
+                        SelectedText="hard"
+                        TextColor="White"
+                        UnselectedText="hard"
+                        WidthRequest="100" 
+                        Clicked="GradientToogleButton_Clicked_2"/>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+            
+
             <Label 
                 Text="Can you score 100%?" 
                 FontFamily="{StaticResource NormalFont}" 
-                FontSize="Large" 
+                FontSize="Default" 
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            
+
             <controls:GradientButton
                 x:Name="FloatingActionButton" 
                 Margin="0,20,0,0"
-                CornerRadius="18"
+                CornerRadius="22"
                 FontSize="20"
                 GradientEndColor="{StaticResource Azul}"
                 GradientStartColor="{StaticResource Violeta}"
