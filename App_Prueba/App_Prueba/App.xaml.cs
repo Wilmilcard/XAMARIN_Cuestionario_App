@@ -10,6 +10,7 @@ namespace App_Prueba
     public partial class App : Application
     {
         public ObservableCollection<Answer> Respuestas = new ObservableCollection<Answer>();
+        public int Dificultad = 1;
 
         public App()
         {

@@ -21,8 +21,9 @@ namespace App_Prueba.ViewModel
         private double _porcentaje = 0.1;
         private string _categoria, _pregunta, _posicion, _respuestaCorrecta, _porcentajeBar;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
+        public int Dificultad = 1;
 
-        public int PreguntaActual{ get { return _preguntaActual; } set { _preguntaActual = value; } }
+        public int PreguntaActual { get { return _preguntaActual; } set { _preguntaActual = value; } }
         public double Porcentaje { get { return _porcentaje; } set { _porcentaje = value; } }
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
@@ -39,7 +40,7 @@ namespace App_Prueba.ViewModel
         {
             ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.PorcentajeBar = "0.1";
-            
+
             t.Elapsed += EventoElapsed;
             t.Start();
         }
@@ -55,12 +56,12 @@ namespace App_Prueba.ViewModel
 
             foreach (var pregunta in Preguntas.results)
             {
-                this.ListaPreguntas.Add(new Question() 
+                this.ListaPreguntas.Add(new Question()
                 {
                     category = pregunta.category,
                     type = pregunta.type,
                     difficulty = pregunta.difficulty,
-                    question = pregunta.question.Replace("&quot;", "'").Replace("&#039;","'").Replace("&rdquo;", "!").Replace(";H&ocirc;", "ô").Replace(" &Idquo;", ": ").Replace("&epsilon;", "ε"),
+                    question = pregunta.question.Replace("&quot;", "'").Replace("&#039;", "'").Replace("&rdquo;", "!").Replace(";H&ocirc;", "ô").Replace(" &Idquo;", ": ").Replace("&epsilon;", "ε"),
                     correct_answer = pregunta.correct_answer,
                     incorrect_answers = pregunta.incorrect_answers
                 });
