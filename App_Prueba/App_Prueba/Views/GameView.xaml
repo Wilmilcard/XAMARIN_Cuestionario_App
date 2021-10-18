@@ -91,12 +91,6 @@
 
                 </StackLayout>
                 
-                <Label x:Name="txtCount" 
-                       Text="{Binding Posicion, Mode=TwoWay}" 
-                       HorizontalTextAlignment="Center" 
-                       FontSize="Small" 
-                       Margin="10"/>
-
                 <controls:GradientProgressBar
                     AlternativeTextColor="#0463E1"
                     BarBackgroundColor="#bcd8f6"

@@ -27,7 +27,6 @@ namespace App_Prueba.ViewModel
         public double Porcentaje { get { return _porcentaje; } set { _porcentaje = value; } }
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
-        public string Posicion { get { return _posicion; } set { SetValue(ref _posicion, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
@@ -61,7 +60,16 @@ namespace App_Prueba.ViewModel
                     category = pregunta.category,
                     type = pregunta.type,
                     difficulty = pregunta.difficulty,
-                    question = pregunta.question.Replace("&quot;", "'").Replace("&#039;", "'").Replace("&rdquo;", "!").Replace(";H&ocirc;", "ô").Replace(" &Idquo;", ": ").Replace("&epsilon;", "ε"),
+                    question = pregunta.question
+                                    .Replace("&quot;", "'")
+                                    .Replace("&#039;", "'")
+                                    .Replace("&rdquo;", "!")
+                                    .Replace(";H&ocirc;", "ô")
+                                    .Replace(" &Idquo;", ": ")
+                                    .Replace("&epsilon;", "ε")
+                                    .Replace("&Isquo;", "‘")
+                                    .Replace("&rsquo;", "’")
+                                    .Replace("&minus;", "-"),
                     correct_answer = pregunta.correct_answer,
                     incorrect_answers = pregunta.incorrect_answers
                 });
@@ -70,7 +78,6 @@ namespace App_Prueba.ViewModel
             this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
             this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
-            this.Posicion = $"{this.PreguntaActual + 1} / 10";
 
         }
 
@@ -83,7 +90,6 @@ namespace App_Prueba.ViewModel
             this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
             this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
-            this.Posicion = $"{this.PreguntaActual + 1} / 10";
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
