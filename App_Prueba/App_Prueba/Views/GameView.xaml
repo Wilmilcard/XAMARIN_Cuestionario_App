@@ -64,8 +64,8 @@
                             Margin="0,25,0,0"
                             CornerRadius="18"
                             FontSize="20"
-                            GradientEndColor="{StaticResource Violeta}"
-                            GradientStartColor="{StaticResource Azul}"
+                            GradientEndColor="{StaticResource VerdeOscuro}"
+                            GradientStartColor="{StaticResource Verde}"
                             HeightRequest="50"
                             WidthRequest="150"
                             HorizontalOptions="Center"
@@ -91,6 +91,7 @@
 
                 </StackLayout>
                 
+
                 <controls:GradientProgressBar
                     AlternativeTextColor="#0463E1"
                     BarBackgroundColor="#bcd8f6"
