@@ -5,7 +5,8 @@
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FBFBFB">
     <ScrollView>
         <StackLayout>
 
@@ -199,6 +200,22 @@
                             FontSize="20" 
                             TextColor="#34495E"
                             Clicked="special4"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🧪 Open Trivia API" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand" />
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}" 
+                            BackgroundColor="Transparent" 
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special5"/>
                     </StackLayout>
 
                 </StackLayout>

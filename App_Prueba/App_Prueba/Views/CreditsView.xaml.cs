@@ -119,5 +119,17 @@ namespace App_Prueba.Views
                 await DisplayAlert("Error", ex.Message, "Ok");
             }
         }
+
+        private async void special5(object sender, EventArgs e)
+        {
+            try
+            {
+                await Browser.OpenAsync("https://opentdb.com/", BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "Ok");
+            }
+        }
     }
 }

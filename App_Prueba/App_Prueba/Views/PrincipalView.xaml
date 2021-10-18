@@ -4,6 +4,7 @@
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FBFBFB"
              x:Class="App_Prueba.Views.PrincipalView">
 
 
