@@ -2,27 +2,61 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.ScoreView"
+             xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="You scored" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-            <Label Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" FontSize="Large" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            <Label 
+                Text="You scored" 
+                FontSize="Large" 
+                HorizontalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center" />
+            
+            <Label 
+                Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" 
+                FontSize="Large" 
+                HorizontalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center" />
+            
             <ScrollView>
-                <ListView ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" RowHeight="90" Margin="10" SeparatorVisibility="Default">
+                <ListView 
+                    ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" 
+                    RowHeight="90" 
+                    Margin="10" 
+                    SeparatorVisibility="Default">
+                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="15">
-                                    <Label Text="{Binding answerUser, Mode=TwoWay}" FontSize="Large" FontAttributes="Bold" Margin="0,0,10,0"/>
-                                    <Label Text="{Binding question, Mode=TwoWay}" FontSize="Small"/>
+                                    <Label 
+                                        Text="{Binding answerUser, Mode=TwoWay}" 
+                                        FontSize="Large" 
+                                        FontAttributes="Bold" 
+                                        Margin="0,0,10,0"/>
+                                    <Label 
+                                        Text="{Binding question, Mode=TwoWay}" 
+                                        FontSize="Small"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollView>
-            <Button Margin="20" Text="PLAY AGAIN?" TextColor="{StaticResource Blanco}" BackgroundColor="{StaticResource NavigationPrimary}" Clicked="Button_Clicked" />
+            
+            <controls:GradientButton
+                Margin="20"
+                CornerRadius="22"
+                FontSize="20"
+                GradientEndColor="{StaticResource Azul}"
+                GradientStartColor="{StaticResource Violeta}"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Text="Play Again?"
+                TextColor="White"
+                Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,7 +19,8 @@ namespace App_Prueba.ViewModel
 
         private int _preguntaActual = 0;
         private double _porcentaje = 0.1;
-        private string _categoria, _pregunta, _posicion, _respuestaCorrecta, _porcentajeBar;
+        private string _categoria, _pregunta, _porcentajeBar;
+        private bool _respuestaCorrecta;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
         public int Dificultad = 1;
 
@@ -28,7 +29,7 @@ namespace App_Prueba.ViewModel
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
-        public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
+        public bool RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
@@ -103,12 +104,24 @@ namespace App_Prueba.ViewModel
 
         public void RespVerdadera()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answerUser = "+", answerCorrect = this.RespuestaCorrecta == "True" ? "+" : "-" });
+            ((App)Application.Current).Respuestas.Add(new Answer() 
+            { 
+                id_question = this.PreguntaActual, 
+                question = this.Pregunta, 
+                answerUser = true, 
+                answerCorrect = this.RespuestaCorrecta
+            });
             this.LoadNextQuestion();
         }
         public async void RespFalsa()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() { id_question = this.PreguntaActual, question = this.Pregunta, answerUser = "-", answerCorrect = this.RespuestaCorrecta == "True" ? "+" : "-" });
+            ((App)Application.Current).Respuestas.Add(new Answer() 
+            { 
+                id_question = this.PreguntaActual, 
+                question = this.Pregunta, 
+                answerUser = false, 
+                answerCorrect = this.RespuestaCorrecta
+            });
             this.LoadNextQuestion();
         }
 
