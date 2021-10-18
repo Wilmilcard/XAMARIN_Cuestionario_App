@@ -23,6 +23,9 @@ namespace App_Prueba.Droid
             base.OnCreate(savedInstanceState);
             //Lottie.Forms.AnimationView.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

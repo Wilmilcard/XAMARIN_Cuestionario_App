@@ -2,25 +2,213 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.CreditsView"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
+    <ScrollView>
         <StackLayout>
 
             <StackLayout
                 Margin="10">
                 
+                <Label 
+                    Text="Credits" 
+                    FontFamily="{StaticResource BoldFont}" 
+                    FontSize="Large" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Version 1.0.0"
+                    FontFamily="{StaticResource BoldFont}" 
+                    FontSize="Micro"
+                    TextColor="{StaticResource Violeta}"
+                    HorizontalOptions="Center" />
+                
+                <Label
+                    x:Name="lblText"
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Default"
+                    HorizontalOptions="Center" />
+
+                <Frame
+                    Padding="15"
+                    CornerRadius="10"
+                    HasShadow="False"
+                    HorizontalOptions="Center">
+                    
+                    <StackLayout>
+                        <forms:CachedImage
+                            DownsampleToViewSize="True"
+                            HeightRequest="70"
+                            Source="Image.jpeg"
+                            WidthRequest="80">
+                       
+                            <forms:CachedImage.Transformations>
+                                <transformations:CircleTransformation />
+                            </forms:CachedImage.Transformations>
+                        </forms:CachedImage>
+                        
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="Juan David Leon" />
+
+                        <Label HorizontalOptions="Center" Text="Developer Engineer" />
+                        
+                        <controls:GradientToogleButton
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Violeta}"
+                            GradientStartColor="{StaticResource Azul}"
+                            HeightRequest="32"
+                            HorizontalOptions="Center"
+                            IsSelected="False"
+                            SelectedText="Following"
+                            TextColor="White"
+                            UnselectedText="Follow"
+                            WidthRequest="100" />
+                        
+                    </StackLayout>
+                </Frame>
+
+                <Label/>
+
+                <Label
+                    Text="Social Network:" 
+                    FontFamily="{StaticResource BoldFont}" 
+                    FontSize="Default"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+
+                    <Button 
+                        Text="&#xf09b;" 
+                        HorizontalOptions="End" 
+                        FontFamily="{StaticResource FontAwesomeBrands}" 
+                        BackgroundColor="Transparent" 
+                        FontSize="30" 
+                        TextColor="#24292F"
+                        Clicked="Git"/>
+
+                    <Button 
+                        Text="&#xf167;" 
+                        HorizontalOptions="End" 
+                        FontFamily="{StaticResource FontAwesomeBrands}" 
+                        BackgroundColor="Transparent" 
+                        FontSize="30" 
+                        TextColor="#FF0000"
+                        Clicked="YouTube"/>
+
+                    <Button 
+                        Text="&#xf08c;" 
+                        HorizontalOptions="End" 
+                        FontFamily="{StaticResource FontAwesomeBrands}" 
+                        BackgroundColor="Transparent" 
+                        FontSize="30" 
+                        TextColor="#0A66C2"
+                        Clicked="linkelind"/>
+
+                    <Button 
+                        Text="&#xf57d;" 
+                        HorizontalOptions="End" 
+                        FontFamily="{StaticResource FontAwesomeSolid}" 
+                        BackgroundColor="Transparent" 
+                        FontSize="30" 
+                        TextColor="#138D75"
+                        Clicked="web"/>
+
+                </StackLayout>
+
+                <Label/>
+
+                <Label
+                    Text="Special Thanks:" 
+                    FontFamily="{StaticResource BoldFont}" 
+                    FontSize="Default"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🎨 Jesus Angulo" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand"/>
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}"
+                            BackgroundColor="Transparent"
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special1"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🖋 Mono Project" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand" />
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}" 
+                            BackgroundColor="Transparent" 
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special2"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🖼 luberda-molinet" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand" />
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}" 
+                            BackgroundColor="Transparent" 
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special3"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🏁 Font Awesome" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand" />
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}" 
+                            BackgroundColor="Transparent" 
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special4"/>
+                    </StackLayout>
+
+                </StackLayout>
+
                 <Image
                     HeightRequest="150"
                     Source="gato1.gif"
                     IsAnimationPlaying="true"
                     VerticalOptions="Center" />
 
-                <Label 
-                    Text="Aplicacion creada por Juan Leon en Xamarin.Forms" 
-                    FontFamily="{StaticResource NormalFont}" 
-                    FontSize="Default" 
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
 
                 <Label 
                     Text="Power By" 
@@ -30,11 +218,11 @@
                     HorizontalOptions="CenterAndExpand" />
 
                 <Image
-                    HeightRequest="100"
+                    HeightRequest="85"
                     Source="nevergate.png"
                     VerticalOptions="Center" />
-                
+
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
