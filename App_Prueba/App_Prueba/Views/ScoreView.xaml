@@ -22,7 +22,8 @@
             
             <Label 
                 Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" 
-                FontSize="Large" 
+                FontSize="Large"
+                FontFamily="{StaticResource NormalFont}"
                 HorizontalOptions="CenterAndExpand" 
                 HorizontalTextAlignment="Center" />
             
@@ -38,12 +39,14 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="15">
                                     <Label 
-                                        Text="{Binding Path=answerUser, Converter={StaticResource BoolToIcon}}"
-                                        TextColor="{Binding Path=answerUser, Converter={StaticResource BoolToColor}}"
+                                        Text="{Binding Path=answerCorrect, Converter={StaticResource BoolToIcon}}"
+                                        TextColor="{Binding Path=answerCorrect, Converter={StaticResource BoolToColor}}"
                                         FontFamily="{StaticResource FontAwesomeSolid}" 
-                                        FontSize="Default" 
-                                        FontAttributes="Bold" 
-                                        Margin="0,0,25,0"/>
+                                        FontSize="Default"
+                                        FontAttributes="Bold"
+                                        WidthRequest="20"
+                                        VerticalTextAlignment="Center"
+                                        HorizontalTextAlignment="Center"/>
                                     <Label 
                                         Text="{Binding question, Mode=TwoWay}" 
                                         FontSize="Default"/>

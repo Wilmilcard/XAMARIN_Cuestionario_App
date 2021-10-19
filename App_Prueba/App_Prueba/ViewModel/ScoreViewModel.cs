@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -19,16 +20,7 @@ namespace App_Prueba.ViewModel
         public ScoreViewModel()
         {
             this.ListaRespuesta = ((App)Application.Current).Respuestas;
-            this.ResultadoFinal();
-        }
-
-        public void ResultadoFinal()
-        {
-            foreach(var rpta in ((App)Application.Current).Respuestas)
-            {
-                if (rpta.answerUser == rpta.answerCorrect)
-                    this.RespuestasCorrectas++;
-            }
+            this.RespuestasCorrectas = this.ListaRespuesta.Where(x => x.answerCorrect).ToList().Count;
         }
     }
 }
