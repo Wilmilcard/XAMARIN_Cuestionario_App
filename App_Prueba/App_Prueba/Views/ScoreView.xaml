@@ -14,16 +14,11 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label 
-                Text="You scored" 
-                FontSize="Large" 
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center" />
             
             <Label 
-                Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" 
+                Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='You scored &#x0a; {0} / 10'}" 
                 FontSize="Large"
-                FontFamily="{StaticResource NormalFont}"
+                FontFamily="{StaticResource BoldFont}"
                 HorizontalOptions="CenterAndExpand" 
                 HorizontalTextAlignment="Center" />
             
@@ -36,7 +31,7 @@
                     
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell IsEnabled="False">
                                 <StackLayout Orientation="Horizontal" Margin="15">
                                     <Label 
                                         Text="{Binding Path=answerCorrect, Converter={StaticResource BoolToIcon}}"
@@ -49,7 +44,8 @@
                                         HorizontalTextAlignment="Center"/>
                                     <Label 
                                         Text="{Binding question, Mode=TwoWay}" 
-                                        FontSize="Default"/>
+                                        FontFamily="{StaticResource NormalFont}"
+                                        FontSize="Small"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
