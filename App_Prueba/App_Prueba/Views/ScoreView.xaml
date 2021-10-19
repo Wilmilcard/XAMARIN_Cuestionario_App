@@ -3,8 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Prueba.Views.ScoreView"
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
+             xmlns:class="clr-namespace:App_Prueba.Clases"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False">
+
+    <ContentPage.Resources>
+        <class:BoolToIconConverter x:Key="BoolToIcon"/>
+        <class:BoolToColorConverter x:Key="BoolToColor"/>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
             <Label 
@@ -31,13 +38,15 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="15">
                                     <Label 
-                                        Text="{Binding answerUser, Mode=TwoWay}" 
-                                        FontSize="Large" 
+                                        Text="{Binding Path=answerUser, Converter={StaticResource BoolToIcon}}"
+                                        TextColor="{Binding Path=answerUser, Converter={StaticResource BoolToColor}}"
+                                        FontFamily="{StaticResource FontAwesomeSolid}" 
+                                        FontSize="Default" 
                                         FontAttributes="Bold" 
-                                        Margin="0,0,10,0"/>
+                                        Margin="0,0,25,0"/>
                                     <Label 
                                         Text="{Binding question, Mode=TwoWay}" 
-                                        FontSize="Small"/>
+                                        FontSize="Default"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
