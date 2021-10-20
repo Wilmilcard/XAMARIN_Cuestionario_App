@@ -28,9 +28,10 @@
     </ContentPage.Triggers>
 
     <ContentPage.Content>
-        <StackLayout Padding="10">
+        <ScrollView>
+            <StackLayout Padding="10">
 
-            <Button 
+                <Button 
                 Text="&#xf05a;" 
                 HorizontalOptions="End" 
                 FontFamily="{StaticResource FontAwesomeSolid}" 
@@ -38,8 +39,8 @@
                 FontSize="18" 
                 TextColor="{StaticResource Azul}"
                 Clicked="Button_Clicked_1"/>
-            
-            <controls:GradientToogleButton
+
+                <controls:GradientToogleButton
                 x:Name="FloatingActionButton2"
                 Margin="0,0,0,0"
                 AlternativeTextColor="#0463E1"
@@ -56,7 +57,7 @@
                 HeightRequest="100"
                 WidthRequest="350"/>
 
-            <Label 
+                <Label 
                 Text="You will be presented with 10 True of False questions" 
                 FontFamily="{StaticResource NormalFont}" 
                 FontSize="Large" 
@@ -65,16 +66,16 @@
                 HorizontalTextAlignment="Center" 
                 Margin="20,100,40,100"/>
 
-            <StackLayout>
-                <Label 
+                <StackLayout>
+                    <Label 
                     Text="Choose difficulty" 
                     FontFamily="{StaticResource BoldFont}" 
                     FontSize="Default" 
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <controls:GradientToogleButton
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <controls:GradientToogleButton
                         x:Name="choise1"
                         Margin="0,25,0,0"
                         AlternativeTextColor="#0463E1"
@@ -91,8 +92,8 @@
                         UnselectedText="easy"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked"/>
-                    
-                    <controls:GradientToogleButton
+
+                        <controls:GradientToogleButton
                         x:Name="choise2"
                         Margin="0,25,0,0"
                         AlternativeTextColor="#0463E1"
@@ -109,8 +110,8 @@
                         UnselectedText="medium"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked_1"/>
-                    
-                    <controls:GradientToogleButton
+
+                        <controls:GradientToogleButton
                         x:Name="choise3"
                         Margin="0,25,0,0"
                         AlternativeTextColor="#0463E1"
@@ -127,20 +128,20 @@
                         UnselectedText="hard"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked_2"/>
-                    
-                </StackLayout>
-                
-            </StackLayout>
-            
 
-            <Label 
+                    </StackLayout>
+
+                </StackLayout>
+
+
+                <Label 
                 Text="Can you score 100%?" 
                 FontFamily="{StaticResource NormalFont}" 
                 FontSize="Default" 
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <controls:GradientButton
+                <controls:GradientButton
                 x:Name="FloatingActionButton" 
                 Margin="0,20,0,0"
                 CornerRadius="22"
@@ -153,7 +154,8 @@
                 Text="Begin"
                 TextColor="White"
                 Clicked="Button_Clicked"/>
-            
-        </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

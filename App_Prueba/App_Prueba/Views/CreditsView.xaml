@@ -88,7 +88,7 @@
 
                 <StackLayout
                     Orientation="Horizontal"
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Center"
                     VerticalOptions="Start">
 
                     <Button 
