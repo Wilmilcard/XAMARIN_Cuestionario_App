@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Web;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -40,16 +41,7 @@ namespace App_Prueba.ViewModel
                     category = pregunta.category,
                     type = pregunta.type,
                     difficulty = pregunta.difficulty,
-                    question = pregunta.question
-                                    .Replace("&quot;", "'")
-                                    .Replace("&#039;", "'")
-                                    .Replace("&rdquo;", "!")
-                                    .Replace(";H&ocirc;", "ô")
-                                    .Replace(" &Idquo;", ": ")
-                                    .Replace("&epsilon;", "ε")
-                                    .Replace("&Isquo;", "‘")
-                                    .Replace("&rsquo;", "’")
-                                    .Replace("&minus;", "-"),
+                    question = HttpUtility.HtmlDecode(pregunta.question),
                     correct_answer = pregunta.correct_answer,
                     incorrect_answers = pregunta.incorrect_answers
                 });
