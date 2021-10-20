@@ -34,51 +34,19 @@ namespace App_Prueba.ViewModel
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
 
-        Timer t = new Timer(500);
 
         public GameViewModel()
         {
             ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.PorcentajeBar = "0.1";
-
-            t.Elapsed += EventoElapsed;
-            t.Start();
+            this.GetFirst();
         }
 
-        public async void GetAll()
+        public async void GetFirst()
         {
-            Result Preguntas = new Result();
-            RestClient rest = new RestClient();
-
-            var rpta = await rest.Get<Result>();
-            if (rpta != null)
-                Preguntas = rpta;
-
-            foreach (var pregunta in Preguntas.results)
-            {
-                this.ListaPreguntas.Add(new Question()
-                {
-                    category = pregunta.category,
-                    type = pregunta.type,
-                    difficulty = pregunta.difficulty,
-                    question = pregunta.question
-                                    .Replace("&quot;", "'")
-                                    .Replace("&#039;", "'")
-                                    .Replace("&rdquo;", "!")
-                                    .Replace(";H&ocirc;", "ô")
-                                    .Replace(" &Idquo;", ": ")
-                                    .Replace("&epsilon;", "ε")
-                                    .Replace("&Isquo;", "‘")
-                                    .Replace("&rsquo;", "’")
-                                    .Replace("&minus;", "-"),
-                    correct_answer = pregunta.correct_answer,
-                    incorrect_answers = pregunta.incorrect_answers
-                });
-            }
-
-            this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
-            this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
-            this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
+            this.Categoria = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
         }
 
@@ -88,18 +56,12 @@ namespace App_Prueba.ViewModel
                 return;
 
             this.PreguntaActual++;
-            this.Categoria = this.ListaPreguntas[this.PreguntaActual].category;
-            this.Pregunta = this.ListaPreguntas[this.PreguntaActual].question;
-            this.RespuestaCorrecta = this.ListaPreguntas[this.PreguntaActual].correct_answer;
+            this.Categoria = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
-        }
-
-        public void EventoElapsed(object sender, ElapsedEventArgs e)
-        {
-            this.GetAll();
-            t.Stop();
         }
 
         public void RespVerdadera()
@@ -113,6 +75,7 @@ namespace App_Prueba.ViewModel
             });
             this.LoadNextQuestion();
         }
+
         public async void RespFalsa()
         {
             ((App)Application.Current).Respuestas.Add(new Answer() 

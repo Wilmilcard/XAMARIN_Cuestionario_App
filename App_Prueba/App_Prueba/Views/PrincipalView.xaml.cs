@@ -1,5 +1,6 @@
 ﻿using App_Prueba.Clases;
 using App_Prueba.Models;
+using App_Prueba.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace App_Prueba.Views
         public PrincipalView()
         {
             InitializeComponent();
+            BindingContext = new PrincipalViewModel();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

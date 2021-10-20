@@ -3,10 +3,21 @@
   <item>
     <color android:color="@color/splash_background"/>
   </item>
+
   <item
     android:width="245dp"
     android:height="145dp"
     android:gravity="center">
+    
+    <bitmap android:src="@drawable/nevergate"
+            android:tileMode="disabled"
+            android:gravity="fill_horizontal|fill_vertical"/>
+  </item>
+  <item
+    android:width="245dp"
+    android:height="145dp"
+    android:gravity="center">
+
     <bitmap android:src="@drawable/nevergate"
             android:tileMode="disabled"
             android:gravity="fill_horizontal|fill_vertical"/>
