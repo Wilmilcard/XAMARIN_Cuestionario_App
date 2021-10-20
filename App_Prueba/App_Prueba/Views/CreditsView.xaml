@@ -69,7 +69,7 @@
                             GradientStartColor="{StaticResource Azul}"
                             HeightRequest="32"
                             HorizontalOptions="Center"
-                            IsSelected="False"
+                            IsSelected="True"
                             SelectedText="Following"
                             TextColor="White"
                             UnselectedText="Follow"
