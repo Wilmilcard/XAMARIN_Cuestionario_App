@@ -35,19 +35,24 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Frame BackgroundColor="#2196F3" 
-                    Padding="12" 
-                    HeightRequest="80">
 
-                    <Label Text="{Binding Categoria, Mode=TwoWay}" 
-                           HorizontalTextAlignment="Center" 
-                           VerticalTextAlignment="Center" 
-                           FontFamily="{StaticResource BoldFont}"
-                           TextColor="White" 
-                           FontSize="20" 
-                           FontAttributes="Bold"/>
-                </Frame>
+                <controls:GradientButton
+                    Margin="0"
+                    FontSize="20"
+                    GradientEndColor="{StaticResource Violeta}"
+                    GradientStartColor="{StaticResource Azul}"
+                    HeightRequest="80"
+                    WidthRequest="800"
+                    HorizontalOptions="Center"
+                    Text="{Binding Categoria, Mode=TwoWay}"
+                    TextColor="White"/>
 
+                <Image
+                    HeightRequest="150"
+                    Source="{Binding SourceImage, Mode=TwoWay}"
+                    IsAnimationPlaying="true"
+                    VerticalOptions="Center" />
+                
                 <Label Text="{Binding Pregunta, Mode=TwoWay}" 
                        HorizontalTextAlignment="Center" 
                        FontSize="Large" 

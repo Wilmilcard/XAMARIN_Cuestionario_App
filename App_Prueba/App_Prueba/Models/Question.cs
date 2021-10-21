@@ -6,6 +6,7 @@ namespace App_Prueba.Models
 {
     public class Question
     {
+        public int categoryId { get; set; }
         public string category { get; set; }
         public string type { get; set; }
         public string difficulty { get; set; }
