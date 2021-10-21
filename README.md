@@ -18,7 +18,7 @@ Su objetivo principal es crear un cuestionario de 11 preguntas, con respuestas v
 # 📄 Descripción del proyecto
 
 ## 📋 Datos
-La URL de la API es: https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean
+La URL de la API es: https://opentdb.com/
 
 Ejemplo devuelto json:
 
