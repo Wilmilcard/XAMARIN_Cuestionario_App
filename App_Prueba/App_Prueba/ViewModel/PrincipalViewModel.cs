@@ -14,21 +14,36 @@ namespace App_Prueba.ViewModel
     public class PrincipalViewModel : BaseViewModel
     {
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
+        private string _stats;
 
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand EasyCommand { get { return new RelayCommand(easy); } }
         public ICommand MediumCommand { get { return new RelayCommand(medium); } }
         public ICommand HardCommand { get { return new RelayCommand(hard); } }
 
+        public string Stats { get { return _stats; } set { SetValue(ref _stats, value); } }
+
         public PrincipalViewModel()
         {
+            this.GetStats();
             this.GetAll();
+        }
+        public async void GetStats()
+        {
+            var Preguntas = new Result();
+            var rest = new RestClient();
+
+            var rpta = await rest.Get<Stats>("https://opentdb.com/api_count_global.php");
+
+           
+            this.Stats = rpta.overall.total_num_of_verified_questions.ToString();
+           
         }
 
         public async void GetAll()
         {
-            Result Preguntas = new Result();
-            RestClient rest = new RestClient();
+            var Preguntas = new Result();
+            var rest = new RestClient();
 
             var rpta = await rest.Get<Result>();
             if (rpta != null)

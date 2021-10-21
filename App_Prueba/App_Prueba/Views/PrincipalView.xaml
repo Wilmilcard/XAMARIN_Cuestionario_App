@@ -53,7 +53,7 @@
                 IsSelected="True"
                 SelectedText="Welcome to the Trivia Challenge!"
                 TextColor="White"
-                UnselectedText="Just enjoy!"
+                UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"
                 HeightRequest="100"
                 WidthRequest="350"/>
 
