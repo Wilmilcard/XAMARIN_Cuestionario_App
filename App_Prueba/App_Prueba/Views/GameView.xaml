@@ -49,7 +49,7 @@
 
                 <Image
                     HeightRequest="150"
-                    Source="{Binding SourceImage, Mode=TwoWay}"
+                    Source="gato1.gif"
                     IsAnimationPlaying="true"
                     VerticalOptions="Center" />
                 

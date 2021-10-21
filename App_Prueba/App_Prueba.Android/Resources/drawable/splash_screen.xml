@@ -4,22 +4,44 @@
     <color android:color="@color/splash_background"/>
   </item>
 
-  <item
-    android:width="245dp"
-    android:height="145dp"
-    android:gravity="center">
-    
-    <bitmap android:src="@drawable/nevergate"
+  <item>
+    <bitmap android:src="@drawable/splash"
             android:tileMode="disabled"
             android:gravity="fill_horizontal|fill_vertical"/>
   </item>
+
   <item
-    android:width="245dp"
-    android:height="145dp"
+   android:width="150dp"
+   android:height="90dp"
+    android:top="200dp"
+   android:gravity="center_horizontal|top">
+
+    <bitmap android:src="@drawable/logo"
+            android:tileMode="disabled"
+            android:gravity="fill_horizontal|fill_vertical"/>
+  </item>
+
+  <item
+    android:width="70dp"
+    android:height="22dp"
+    android:top="330dp"
     android:gravity="center">
 
-    <bitmap android:src="@drawable/nevergate"
+    <bitmap android:src="@drawable/design_by"
             android:tileMode="disabled"
             android:gravity="fill_horizontal|fill_vertical"/>
   </item>
+
+  <item
+    android:width="150dp"
+    android:height="90dp"
+    android:top="450dp"
+    android:gravity="center">
+
+    <bitmap android:src="@drawable/nevergate_white"
+            android:tileMode="disabled"
+            android:gravity="fill_horizontal|fill_vertical"/>
+  </item>
+
+  
 </layer-list>

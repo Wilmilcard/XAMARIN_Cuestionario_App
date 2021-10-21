@@ -49,8 +49,7 @@ namespace App_Prueba.ViewModel
             this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
-            Console.WriteLine(((App)Application.Current).ListaPreguntas[this.PreguntaActual].categoryId);
-            this.SourceImage = "Image.jpeg";
+            this.SourceImage = "gato2.gif";
         }
 
         public void LoadNextQuestion()
@@ -63,7 +62,6 @@ namespace App_Prueba.ViewModel
             this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
-            Console.WriteLine(((App)Application.Current).ListaPreguntas[this.PreguntaActual].categoryId);
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
         }
