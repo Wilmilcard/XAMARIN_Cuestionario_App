@@ -19,7 +19,27 @@
 
             <StackLayout
                 Margin="10">
-                
+
+                <Button 
+                   Text="&#xf00d;" 
+                   HorizontalOptions="End" 
+                   FontFamily="{StaticResource FontAwesomeSolid}" 
+                   BackgroundColor="Transparent" 
+                   FontSize="25" 
+                   WidthRequest="45"
+                   TextColor="{StaticResource Rojo}"
+                   Clicked="back"/>
+
+                <!--<Button 
+                   Text="&#xf3e5;" 
+                   HorizontalOptions="Start" 
+                   FontFamily="{StaticResource FontAwesomeSolid}" 
+                   BackgroundColor="Transparent" 
+                   FontSize="25" 
+                   WidthRequest="45"
+                   TextColor="{StaticResource Azul}"
+                   Clicked="back"/>-->
+
                 <Label 
                     Text="Credits" 
                     FontFamily="{StaticResource BoldFont}" 
@@ -161,6 +181,22 @@
                             Clicked="special1"/>
                     </StackLayout>
 
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label
+                            Text=" 🐛 Juana Bravo - Testing" 
+                            FontFamily="{StaticResource NormalFont}" 
+                            FontSize="Default"
+                            VerticalOptions="CenterAndExpand" />
+                        <Button 
+                            Text="&#xf35d;" 
+                            HorizontalOptions="End" 
+                            FontFamily="{StaticResource FontAwesomeSolid}" 
+                            BackgroundColor="Transparent" 
+                            FontSize="20" 
+                            TextColor="#34495E"
+                            Clicked="special6"/>
+                    </StackLayout>
+                    
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <Label
                             Text=" 🖋 Mono Project" 

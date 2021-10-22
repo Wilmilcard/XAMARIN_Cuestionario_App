@@ -31,8 +31,9 @@
             <ScrollView>
                 <ListView 
                     ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" 
-                    RowHeight="90" 
+                    RowHeight="100" 
                     Margin="10" 
+                    VerticalOptions="Center"
                     SeparatorVisibility="Default">
                     
                     <ListView.ItemTemplate>
@@ -51,6 +52,8 @@
                                     <Label 
                                         Text="{Binding question, Mode=TwoWay}" 
                                         FontFamily="{StaticResource NormalFont}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center"
                                         FontSize="Small"/>
                                 </StackLayout>
                             </ViewCell>

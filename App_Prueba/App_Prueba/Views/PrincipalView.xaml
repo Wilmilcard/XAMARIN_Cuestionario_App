@@ -29,16 +29,30 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="10">
+            <StackLayout Padding="10" HorizontalOptions="End">
 
-                <Button 
-                Text="&#xf05a;" 
-                HorizontalOptions="End" 
-                FontFamily="{StaticResource FontAwesomeSolid}" 
-                BackgroundColor="Transparent" 
-                FontSize="18" 
-                TextColor="{StaticResource Azul}"
-                Clicked="Button_Clicked_1"/>
+                <StackLayout Orientation="Horizontal">
+
+                    <Label 
+                        Text="Credits" 
+                        FontFamily="{StaticResource NormalFont}" 
+                        FontSize="Default" 
+                        WidthRequest="50"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="EndAndExpand" />
+
+                    <Button 
+                        Text="&#xf05a;" 
+                        HorizontalOptions="End" 
+                        FontFamily="{StaticResource FontAwesomeSolid}" 
+                        BackgroundColor="Transparent" 
+                        FontSize="20" 
+                        WidthRequest="45"
+                        TextColor="{StaticResource Azul}"
+                        Clicked="Button_Clicked_1"/>
+                    
+                </StackLayout>
+                
 
                 <controls:GradientToogleButton
                 x:Name="FloatingActionButton2"
@@ -87,9 +101,9 @@
                         HeightRequest="40"
                         HorizontalOptions="Center"
                         IsSelected="False"
-                        SelectedText="easy"
+                        SelectedText="Easy"
                         TextColor="White"
-                        UnselectedText="easy"
+                        UnselectedText="Easy"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked"/>
 
@@ -105,9 +119,9 @@
                         HeightRequest="40"
                         HorizontalOptions="Center"
                         IsSelected="True"
-                        SelectedText="medium"
+                        SelectedText="Medium"
                         TextColor="White"
-                        UnselectedText="medium"
+                        UnselectedText="Medium"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked_1"/>
 
@@ -123,9 +137,9 @@
                         HeightRequest="40"
                         HorizontalOptions="Center"
                         IsSelected="False"
-                        SelectedText="hard"
+                        SelectedText="Hard"
                         TextColor="White"
-                        UnselectedText="hard"
+                        UnselectedText="Hard"
                         WidthRequest="100" 
                         Clicked="GradientToogleButton_Clicked_2"/>
 
