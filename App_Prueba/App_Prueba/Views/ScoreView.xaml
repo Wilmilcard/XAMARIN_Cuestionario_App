@@ -5,11 +5,17 @@
              xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
              xmlns:class="clr-namespace:App_Prueba.Clases"
              NavigationPage.HasNavigationBar="False"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#FBFBFB">
 
     <ContentPage.Resources>
         <class:BoolToIconConverter x:Key="BoolToIcon"/>
         <class:BoolToColorConverter x:Key="BoolToColor"/>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#08142a" />
+            </Style>
+        </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
