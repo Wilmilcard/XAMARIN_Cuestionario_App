@@ -37,14 +37,15 @@
             <StackLayout>
 
                 <controls:GradientButton
+                    x:Name="boton"
                     Margin="0"
                     FontSize="20"
                     GradientEndColor="{StaticResource Violeta}"
                     GradientStartColor="{StaticResource Azul}"
                     HeightRequest="80"
                     WidthRequest="800"
-                    HorizontalOptions="Center"
                     Text="{Binding Categoria, Mode=TwoWay}"
+                    HorizontalOptions="Center"
                     TextColor="White"/>
 
                 <Image
@@ -59,7 +60,7 @@
                        FontFamily="{StaticResource NormalFont}"
                        VerticalOptions="CenterAndExpand" 
                        Margin="25"/>
-                
+
                 <StackLayout Orientation="Horizontal" 
                              Margin="20" 
                              HorizontalOptions="Center">

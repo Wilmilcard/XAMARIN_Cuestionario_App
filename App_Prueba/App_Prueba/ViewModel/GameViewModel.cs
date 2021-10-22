@@ -19,7 +19,7 @@ namespace App_Prueba.ViewModel
 
         private int _preguntaActual = 0;
         private double _porcentaje = 0.1;
-        private string _categoria, _pregunta, _porcentajeBar, _sourceImage;
+        private string _categoria, _pregunta, _porcentajeBar;
         private bool _respuestaCorrecta;
         private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
         public int Dificultad = 1;
@@ -29,7 +29,6 @@ namespace App_Prueba.ViewModel
         public string Categoria { get { return _categoria; } set { SetValue(ref _categoria, value); } }
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
-        public string SourceImage { get { return _sourceImage; } set { SetValue(ref _sourceImage, value); } }
         public bool RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
@@ -49,7 +48,6 @@ namespace App_Prueba.ViewModel
             this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
-            this.SourceImage = "gato2.gif";
         }
 
         public void LoadNextQuestion()
@@ -61,6 +59,8 @@ namespace App_Prueba.ViewModel
             this.Categoria = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].category;
             this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
+
+            Console.WriteLine("------------------------>"+this.Categoria);
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();

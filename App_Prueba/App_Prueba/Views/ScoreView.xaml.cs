@@ -21,7 +21,10 @@ namespace App_Prueba.Views
 
         async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PrincipalView());
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
+
+            //await Navigation.PushAsync(new PrincipalView());
         }
     }
 }

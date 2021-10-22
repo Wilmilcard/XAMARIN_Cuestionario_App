@@ -26,14 +26,15 @@ namespace App_Prueba.ViewModel
 
         public PrincipalViewModel()
         {
-            this.GetStats();
             this.GetAll();
+            this.GetStats();
         }
 
         public async void GetStats()
         {
             var rest = new RestClient();
             var rpta = await rest.Get<Stats>("https://opentdb.com/api_count_global.php");
+            this.Stats = "";
 
             this.Stats = rpta.overall.total_num_of_verified_questions.ToString();
         }
@@ -42,6 +43,7 @@ namespace App_Prueba.ViewModel
         {
             var Preguntas = new Result();
             var rest = new RestClient();
+            ((App)Application.Current).ListaPreguntas = new ObservableCollection<Question>();
 
             var rpta = await rest.Get<Result>();
             if (rpta != null)

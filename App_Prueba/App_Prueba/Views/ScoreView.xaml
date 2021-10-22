@@ -65,6 +65,7 @@
                 Text="Play Again?"
                 TextColor="White"
                 Clicked="Button_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
