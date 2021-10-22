@@ -85,8 +85,11 @@ namespace App_Prueba.Controls
             set => SetValue(CommandParameterProperty, value);
         }
 
-        public static BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string),
-            typeof(GradientButton), string.Empty, BindingMode.OneWay, propertyChanged: OnPropertyChangedInvalidate);
+        public static BindableProperty TextProperty = BindableProperty
+            .Create(nameof(Text), typeof(string),
+            typeof(GradientButton), string.Empty, BindingMode.TwoWay,
+            validateValue: (_, value) => value != null,
+            propertyChanged: OnPropertyChangedInvalidate);
 
         public string Text
         {
@@ -105,13 +108,19 @@ namespace App_Prueba.Controls
 
         private static void OnPropertyChangedInvalidate(BindableObject bindable, object oldvalue, object newvalue)
         {
-            if(bindable == null)
+            try
             {
-                var control = (GradientToogleButton)bindable;
-                
+                var control = (GradientButton)bindable;
+
                 if (oldvalue != newvalue)
                     control.InvalidateSurface();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
+
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)

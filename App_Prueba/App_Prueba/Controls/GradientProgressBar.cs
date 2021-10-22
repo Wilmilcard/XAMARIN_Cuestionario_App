@@ -10,7 +10,8 @@ namespace App_Prueba.Controls
 {
     public class GradientProgressBar : SKCanvasView
     {
-        public static BindableProperty PercentageProperty = BindableProperty.Create(nameof(Percentage), typeof(float),
+        public static BindableProperty PercentageProperty = BindableProperty
+            .Create(nameof(Percentage), typeof(float),
             typeof(GradientProgressBar), 0f, BindingMode.TwoWay,
             validateValue: (_, value) => value != null,
             propertyChanged: OnPropertyChangedInvalidate);
@@ -150,7 +151,11 @@ namespace App_Prueba.Controls
                 canvas.DrawRoundRect(progressBar, paint);
             }
 
-            var textPaint = new SKPaint { Color = TextColor.ToSKColor(), TextSize = textSize };
+            var textPaint = new SKPaint 
+            { 
+                Color = TextColor.ToSKColor(), 
+                TextSize = textSize 
+            };
 
             var textBounds = new SKRect();
 

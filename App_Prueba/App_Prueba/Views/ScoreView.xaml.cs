@@ -23,8 +23,6 @@ namespace App_Prueba.Views
         {
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
-
-            //await Navigation.PushAsync(new PrincipalView());
         }
     }
 }

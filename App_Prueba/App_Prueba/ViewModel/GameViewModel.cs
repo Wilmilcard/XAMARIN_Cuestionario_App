@@ -60,8 +60,6 @@ namespace App_Prueba.ViewModel
             this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
             this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
 
-            Console.WriteLine("------------------------>"+this.Categoria);
-
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
         }
