@@ -33,17 +33,9 @@
 
                 <StackLayout Orientation="Horizontal">
 
-                    <Label 
-                        Text="Credits" 
-                        FontFamily="{StaticResource NormalFont}" 
-                        FontSize="Default" 
-                        WidthRequest="50"
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="EndAndExpand" />
-
                     <Button 
                         Text="&#xf05a;" 
-                        HorizontalOptions="End" 
+                        HorizontalOptions="EndAndExpand" 
                         FontFamily="{StaticResource FontAwesomeSolid}" 
                         BackgroundColor="Transparent" 
                         FontSize="20" 

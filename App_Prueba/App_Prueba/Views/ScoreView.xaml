@@ -22,12 +22,19 @@
         <StackLayout>
             
             <Label 
-                Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='You scored &#x0a; {0} / 10'}" 
+                Text="You scored" 
                 FontSize="Large"
                 FontFamily="{StaticResource BoldFont}"
                 HorizontalOptions="CenterAndExpand" 
                 HorizontalTextAlignment="Center" />
-            
+
+            <Label 
+                Text="{Binding RespuestasCorrectas, Mode=TwoWay, StringFormat='{0} / 10'}" 
+                FontSize="Large"
+                FontFamily="{StaticResource BoldFont}"
+                HorizontalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center" />
+
             <ScrollView>
                 <ListView 
                     ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" 
