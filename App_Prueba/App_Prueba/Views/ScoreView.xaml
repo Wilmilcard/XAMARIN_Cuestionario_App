@@ -38,7 +38,7 @@
             <ScrollView>
                 <ListView 
                     ItemsSource="{Binding ListaRespuesta, Mode=TwoWay}" 
-                    RowHeight="100" 
+                    RowHeight="120" 
                     Margin="10" 
                     VerticalOptions="Center"
                     SeparatorVisibility="Default">

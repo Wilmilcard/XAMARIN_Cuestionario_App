@@ -30,16 +30,6 @@
                    TextColor="{StaticResource Rojo}"
                    Clicked="back"/>
 
-                <!--<Button 
-                   Text="&#xf3e5;" 
-                   HorizontalOptions="Start" 
-                   FontFamily="{StaticResource FontAwesomeSolid}" 
-                   BackgroundColor="Transparent" 
-                   FontSize="25" 
-                   WidthRequest="45"
-                   TextColor="{StaticResource Azul}"
-                   Clicked="back"/>-->
-
                 <Label 
                     Text="Credits" 
                     FontFamily="{StaticResource BoldFont}" 
@@ -69,7 +59,7 @@
                     <StackLayout>
                         <forms:CachedImage
                             DownsampleToViewSize="True"
-                            HeightRequest="70"
+                            HeightRequest="80"
                             Source="Image.jpeg"
                             WidthRequest="80">
                        

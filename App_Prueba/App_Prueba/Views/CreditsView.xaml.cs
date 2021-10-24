@@ -136,7 +136,7 @@ namespace App_Prueba.Views
         {
             try
             {
-                await Browser.OpenAsync("https://sharkleader.com.co/", BrowserLaunchMode.SystemPreferred);
+                await Browser.OpenAsync("https://www.linkedin.com/in/juana-sherley-bravo-castro-590201170/", BrowserLaunchMode.SystemPreferred);
             }
             catch (Exception ex)
             {
