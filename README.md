@@ -13,7 +13,7 @@
 
 # 🚩 Objetivo
 
-Su objetivo principal es crear un cuestionario de 11 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. 
+Su objetivo principal es crear un cuestionario de 10 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. Ademas de demostrar habilidades en la creacion de Aplicaciones en Xamarin Forms
 
 # 📄 Descripción del proyecto
 
