@@ -11,6 +11,8 @@
     </p>
 </p>
 
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/5.jpg">
+
 # 🚩 Objetivo
 
 Su objetivo principal es crear un cuestionario de 10 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. Ademas de demostrar habilidades en la creacion de Aplicaciones en Xamarin Forms
@@ -64,6 +66,11 @@ Se clona el repositorio y se hace un debug desde un emulador o un celular en mod
 1. Clonar el repositorio.
 2. Ejecutar el proyecto.
 
+# 🖼 Screenshots
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/1.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/2.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/3.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/4.jpg">
 
 Este programa puede ir mejorando y cambiando, pero mientras tanto esta es una muestra de lo que puede hacer 🛴
 
