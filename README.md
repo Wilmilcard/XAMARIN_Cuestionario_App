@@ -17,6 +17,15 @@
 
 Su objetivo principal es crear un cuestionario de 10 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. Ademas de demostrar habilidades en la creacion de Aplicaciones en Xamarin Forms
 
+# 📲 Link de Descarga
+
+La app esta para ser descargada y revisada desde la PlayStore
+<br/>
+<br/>
+<a href="https://play.google.com/store/apps/details?id=com.nevergate.trivia_time" target="_blank">
+	<img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" hei alt="template repository"  width="250" height="50">
+</a>
+
 # 📄 Descripción del proyecto
 
 ## 📋 Datos
