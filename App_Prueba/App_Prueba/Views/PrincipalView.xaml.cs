@@ -51,5 +51,15 @@ namespace App_Prueba.Views
             this.choise1.IsSelected = false;
             this.choise2.IsSelected = false;
         }
+
+        private void GradientToogleButton_Clicked_3(object sender, TappedEventArgs e)
+        {
+            this.choiseType2.IsSelected = false;
+        }
+
+        private void GradientToogleButton_Clicked_4(object sender, TappedEventArgs e)
+        {
+            this.choiseType1.IsSelected = false;
+        }
     }
 }

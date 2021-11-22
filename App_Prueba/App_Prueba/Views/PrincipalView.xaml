@@ -47,93 +47,139 @@
                 
 
                 <controls:GradientToogleButton
-                x:Name="FloatingActionButton2"
-                Margin="0,0,0,0"
-                AlternativeTextColor="#0463E1"
-                BarBackgroundColor="#bcd8f6"
-                CornerRadius="18"
-                FontSize="22"
-                GradientEndColor="{StaticResource Azul}"
-                GradientStartColor="{StaticResource Violeta}"
-                HorizontalOptions="Center"
-                IsSelected="True"
-                SelectedText="Welcome to the Trivia Challenge!"
-                TextColor="White"
-                UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"
-                HeightRequest="100"
-                WidthRequest="350"/>
+                    x:Name="FloatingActionButton2"
+                    Margin="0,0,0,0"
+                    AlternativeTextColor="#0463E1"
+                    BarBackgroundColor="#bcd8f6"
+                    CornerRadius="18"
+                    FontSize="22"
+                    GradientEndColor="{StaticResource Azul}"
+                    GradientStartColor="{StaticResource Violeta}"
+                    HorizontalOptions="Center"
+                    IsSelected="True"
+                    SelectedText="Welcome to the Trivia Challenge!"
+                    TextColor="White"
+                    UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"
+                    HeightRequest="100"
+                    WidthRequest="350"/>
 
                 <Label 
-                Text="You will be presented with 10 True of False questions" 
-                FontFamily="{StaticResource NormalFont}" 
-                FontSize="Large" 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center" 
-                Margin="20,100,40,100"/>
+                    Text="You will be presented with 10 True of False questions" 
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Large" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    HorizontalTextAlignment="Center" 
+                    Margin="20,70,40,70"/>
 
                 <StackLayout>
                     <Label 
-                    Text="Choose difficulty" 
-                    FontFamily="{StaticResource BoldFont}" 
-                    FontSize="Default" 
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                        Text="Choose difficulty" 
+                        FontFamily="{StaticResource BoldFont}" 
+                        FontSize="Default" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <controls:GradientToogleButton
-                        x:Name="choise1"
-                        Margin="0,25,0,0"
-                        AlternativeTextColor="#0463E1"
-                        BarBackgroundColor="#bcd8f6"
-                        CornerRadius="18"
-                        FontSize="15"
-                        GradientEndColor="{StaticResource Violeta}"
-                        GradientStartColor="{StaticResource Azul}"
-                        HeightRequest="40"
-                        HorizontalOptions="Center"
-                        IsSelected="False"
-                        SelectedText="Easy"
-                        TextColor="White"
-                        UnselectedText="Easy"
-                        WidthRequest="100" 
-                        Clicked="GradientToogleButton_Clicked"/>
+                            x:Name="choise1"
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Violeta}"
+                            GradientStartColor="{StaticResource Azul}"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            IsSelected="False"
+                            SelectedText="Easy"
+                            TextColor="White"
+                            UnselectedText="Easy"
+                            WidthRequest="100" 
+                            Clicked="GradientToogleButton_Clicked"/>
 
                         <controls:GradientToogleButton
-                        x:Name="choise2"
-                        Margin="0,25,0,0"
-                        AlternativeTextColor="#0463E1"
-                        BarBackgroundColor="#bcd8f6"
-                        CornerRadius="18"
-                        FontSize="15"
-                        GradientEndColor="{StaticResource Verde}"
-                        GradientStartColor="{StaticResource VerdeOscuro}"
-                        HeightRequest="40"
-                        HorizontalOptions="Center"
-                        IsSelected="True"
-                        SelectedText="Medium"
-                        TextColor="White"
-                        UnselectedText="Medium"
-                        WidthRequest="100" 
-                        Clicked="GradientToogleButton_Clicked_1"/>
+                            x:Name="choise2"
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Verde}"
+                            GradientStartColor="{StaticResource VerdeOscuro}"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            IsSelected="True"
+                            SelectedText="Medium"
+                            TextColor="White"
+                            UnselectedText="Medium"
+                            WidthRequest="100" 
+                            Clicked="GradientToogleButton_Clicked_1"/>
 
                         <controls:GradientToogleButton
-                        x:Name="choise3"
-                        Margin="0,25,0,0"
-                        AlternativeTextColor="#0463E1"
-                        BarBackgroundColor="#bcd8f6"
-                        CornerRadius="18"
-                        FontSize="15"
-                        GradientEndColor="{StaticResource Rojo}"
-                        GradientStartColor="{StaticResource Naranja}"
-                        HeightRequest="40"
-                        HorizontalOptions="Center"
-                        IsSelected="False"
-                        SelectedText="Hard"
-                        TextColor="White"
-                        UnselectedText="Hard"
-                        WidthRequest="100" 
-                        Clicked="GradientToogleButton_Clicked_2"/>
+                            x:Name="choise3"
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Rojo}"
+                            GradientStartColor="{StaticResource Naranja}"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            IsSelected="False"
+                            SelectedText="Hard"
+                            TextColor="White"
+                            UnselectedText="Hard"
+                            WidthRequest="100" 
+                            Clicked="GradientToogleButton_Clicked_2"/>
+
+                    </StackLayout>
+
+                    <Label 
+                        Text="Choose type question" 
+                        FontFamily="{StaticResource BoldFont}" 
+                        FontSize="Default" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <controls:GradientToogleButton
+                            x:Name="choiseType1"
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Amarillo}"
+                            GradientStartColor="{StaticResource AmarilloOscuro}"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            IsSelected="True"
+                            SelectedText="True / False"
+                            TextColor="White"
+                            UnselectedText="True / False"
+                            WidthRequest="150" 
+                            Clicked="GradientToogleButton_Clicked_3"/>
+
+                        <controls:GradientToogleButton
+                            x:Name="choiseType2"
+                            Margin="0,25,0,0"
+                            AlternativeTextColor="#0463E1"
+                            BarBackgroundColor="#bcd8f6"
+                            CornerRadius="18"
+                            FontSize="15"
+                            GradientEndColor="{StaticResource Amarillo}"
+                            GradientStartColor="{StaticResource AmarilloOscuro}"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            IsSelected="False"
+                            SelectedText="Multiple Choice"
+                            TextColor="White"
+                            UnselectedText="Multiple Choice"
+                            WidthRequest="150" 
+                            Clicked="GradientToogleButton_Clicked_4"/>
 
                     </StackLayout>
 
@@ -141,25 +187,25 @@
 
 
                 <Label 
-                Text="Can you score 100%?" 
-                FontFamily="{StaticResource NormalFont}" 
-                FontSize="Default" 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                    Text="Can you score 100%?" 
+                    FontFamily="{StaticResource NormalFont}" 
+                    FontSize="Default" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
 
                 <controls:GradientButton
-                x:Name="FloatingActionButton" 
-                Margin="0,20,0,0"
-                CornerRadius="22"
-                FontSize="20"
-                GradientEndColor="{StaticResource Azul}"
-                GradientStartColor="{StaticResource Violeta}"
-                HeightRequest="50"
-                WidthRequest="300"
-                HorizontalOptions="Center"
-                Text="Begin"
-                TextColor="White"
-                Clicked="Button_Clicked"/>
+                    x:Name="FloatingActionButton" 
+                    Margin="0,20,0,0"
+                    CornerRadius="22"
+                    FontSize="20"
+                    GradientEndColor="{StaticResource Azul}"
+                    GradientStartColor="{StaticResource Violeta}"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    Text="Begin"
+                    TextColor="White"
+                    Clicked="Button_Clicked"/>
 
             </StackLayout>
         </ScrollView>
