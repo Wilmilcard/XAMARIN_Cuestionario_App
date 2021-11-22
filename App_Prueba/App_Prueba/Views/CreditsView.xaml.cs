@@ -132,17 +132,17 @@ namespace App_Prueba.Views
             }
         }
 
-        private async void special6(object sender, EventArgs e)
-        {
-            try
-            {
-                await Browser.OpenAsync("https://www.linkedin.com/in/juana-sherley-bravo-castro-590201170/", BrowserLaunchMode.SystemPreferred);
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.Message, "Ok");
-            }
-        }
+        //private async void special6(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        await Browser.OpenAsync("https://www.linkedin.com/in/juana-sherley-bravo-castro-590201170/", BrowserLaunchMode.SystemPreferred);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        await DisplayAlert("Error", ex.Message, "Ok");
+        //    }
+        //}
         private void back(object sender, EventArgs e)
         {
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());

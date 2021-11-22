@@ -171,7 +171,7 @@
                             Clicked="special1"/>
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <Label
                             Text=" 🐛 Juana Bravo - Testing" 
                             FontFamily="{StaticResource NormalFont}" 
@@ -185,7 +185,7 @@
                             FontSize="20" 
                             TextColor="#34495E"
                             Clicked="special6"/>
-                    </StackLayout>
+                    </StackLayout>-->
                     
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <Label
