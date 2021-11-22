@@ -97,7 +97,8 @@
                             TextColor="White"
                             UnselectedText="Easy"
                             WidthRequest="100" 
-                            Clicked="GradientToogleButton_Clicked"/>
+                            Clicked="GradientToogleButton_Clicked"
+                            Command="{Binding EasyCommand}"/>
 
                         <controls:GradientToogleButton
                             x:Name="choise2"
@@ -115,7 +116,8 @@
                             TextColor="White"
                             UnselectedText="Medium"
                             WidthRequest="100" 
-                            Clicked="GradientToogleButton_Clicked_1"/>
+                            Clicked="GradientToogleButton_Clicked_1"
+                            Command="{Binding MediumCommand}"/>
 
                         <controls:GradientToogleButton
                             x:Name="choise3"
@@ -133,7 +135,8 @@
                             TextColor="White"
                             UnselectedText="Hard"
                             WidthRequest="100" 
-                            Clicked="GradientToogleButton_Clicked_2"/>
+                            Clicked="GradientToogleButton_Clicked_2"
+                            Command="{Binding HardCommand}"/>
 
                     </StackLayout>
 
