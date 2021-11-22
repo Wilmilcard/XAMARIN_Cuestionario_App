@@ -60,7 +60,7 @@ namespace App_Prueba.Views
 
         private void GradientToogleButton_Clicked_4(object sender, TappedEventArgs e)
         {
-            ((App)Application.Current).ModeGame = 0;
+            ((App)Application.Current).ModeGame = 1;
             this.choiseType1.IsSelected = false;
         }
     }

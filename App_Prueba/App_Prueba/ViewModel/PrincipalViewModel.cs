@@ -21,6 +21,8 @@ namespace App_Prueba.ViewModel
         public ICommand EasyCommand { get { return new RelayCommand(easy); } }
         public ICommand MediumCommand { get { return new RelayCommand(medium); } }
         public ICommand HardCommand { get { return new RelayCommand(hard); } }
+        public ICommand BoolCommand { get { return new RelayCommand(boolean); } }
+        public ICommand MultipleChoiseCommand { get { return new RelayCommand(multipleChoise); } }
 
         public string Stats { get { return _stats; } set { SetValue(ref _stats, value); } }
 
@@ -80,6 +82,18 @@ namespace App_Prueba.ViewModel
         public void hard()
         {
             ((App)Application.Current).Dificultad = 2;
+            this.GetAll();
+        }
+
+        public void boolean()
+        {
+            ((App)Application.Current).ModeGame = 0;
+            this.GetAll();
+        }
+
+        public void multipleChoise()
+        {
+            ((App)Application.Current).ModeGame = 1;
             this.GetAll();
         }
     }
