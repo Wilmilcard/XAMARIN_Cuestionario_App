@@ -11,9 +11,20 @@
     </p>
 </p>
 
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/5.jpg">
+
 # 🚩 Objetivo
 
-Su objetivo principal es crear un cuestionario de 11 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. 
+Su objetivo principal es crear un cuestionario de 10 preguntas, con respuestas verdaderas o falsas en la tecnología que está aplicando para trabajar. Ademas de demostrar habilidades en la creacion de Aplicaciones en Xamarin Forms
+
+# 📲 Link de Descarga
+
+La app esta para ser descargada y revisada desde la PlayStore
+<br/>
+<br/>
+<a href="https://play.google.com/store/apps/details?id=com.nevergate.trivia_time" target="_blank">
+	<img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" hei alt="template repository"  width="250" height="50">
+</a>
 
 # 📄 Descripción del proyecto
 
@@ -64,6 +75,11 @@ Se clona el repositorio y se hace un debug desde un emulador o un celular en mod
 1. Clonar el repositorio.
 2. Ejecutar el proyecto.
 
+# 🖼 Screenshots
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/1.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/2.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/3.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/4.jpg">
 
 Este programa puede ir mejorando y cambiando, pero mientras tanto esta es una muestra de lo que puede hacer 🛴
 
