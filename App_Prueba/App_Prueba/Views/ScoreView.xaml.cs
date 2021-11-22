@@ -21,8 +21,12 @@ namespace App_Prueba.Views
 
         async void Button_Clicked(object sender, EventArgs e)
         {
+            PrincipalViewModel pvm = new PrincipalViewModel();
+            pvm.GetAll();
+            pvm.GetStats();
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
             Device.BeginInvokeOnMainThread(async () => await Navigation.PopModalAsync());
         }
+
     }
 }

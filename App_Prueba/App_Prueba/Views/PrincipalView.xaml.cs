@@ -54,11 +54,13 @@ namespace App_Prueba.Views
 
         private void GradientToogleButton_Clicked_3(object sender, TappedEventArgs e)
         {
+            ((App)Application.Current).ModeGame = 0;
             this.choiseType2.IsSelected = false;
         }
 
         private void GradientToogleButton_Clicked_4(object sender, TappedEventArgs e)
         {
+            ((App)Application.Current).ModeGame = 0;
             this.choiseType1.IsSelected = false;
         }
     }

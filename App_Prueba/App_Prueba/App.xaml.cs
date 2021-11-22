@@ -12,6 +12,7 @@ namespace App_Prueba
         public ObservableCollection<Question> ListaPreguntas = new ObservableCollection<Question>();
         public ObservableCollection<Answer> Respuestas = new ObservableCollection<Answer>();
         public int Dificultad = 1;
+        public int ModeGame = 0;
 
         public App()
         {

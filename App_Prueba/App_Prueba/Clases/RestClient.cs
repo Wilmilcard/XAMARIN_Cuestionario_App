@@ -10,7 +10,7 @@ namespace App_Prueba.Clases
 {
     public class RestClient
     {
-        public async Task<T> Get<T>(string url_aux = null, string type = "boolean", string amount = "10")
+        public async Task<T> Get<T>(string url_aux = null, string amount = "10")
         {
             try
             {
@@ -24,6 +24,11 @@ namespace App_Prueba.Clases
                         _diffculty = "hard";
                         break;
                 }
+
+                string type = "boolean";
+                if (((App)Application.Current).ModeGame != 0)
+                    type = "multiple";
+
                 var url = $"{Constants.ApiServiceString}{Constants.param_amount}{amount}{Constants.Param_Difficulty}{_diffculty}{Constants.Param_Type}{type}";
                 
                 if (!string.IsNullOrEmpty(url_aux))
