@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace App_Prueba.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GameView : ContentPage
+    public partial class GameBooleanView : ContentPage
     {
-        public GameView()
+        public GameBooleanView()
         {
             InitializeComponent();
             BindingContext = new GameBooleanModel();
