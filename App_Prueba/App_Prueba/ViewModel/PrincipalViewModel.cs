@@ -28,8 +28,8 @@ namespace App_Prueba.ViewModel
 
         public PrincipalViewModel()
         {
-            //this.GetAll();
-            //this.GetStats();
+            this.GetAll();
+            this.GetStats();
         }
 
         public async void GetStats()
@@ -46,6 +46,7 @@ namespace App_Prueba.ViewModel
             var Preguntas = new Result();
             var rest = new RestClient();
             ((App)Application.Current).ListaPreguntas = new ObservableCollection<Question>();
+            this.ListaPreguntas = new ObservableCollection<Question>();
 
             var rpta = await rest.Get<Result>();
             if (rpta != null)
