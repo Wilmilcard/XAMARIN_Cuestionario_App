@@ -28,8 +28,8 @@ namespace App_Prueba.ViewModel
 
         public PrincipalViewModel()
         {
-            this.GetAll();
-            this.GetStats();
+            //this.GetAll();
+            //this.GetStats();
         }
 
         public async void GetStats()

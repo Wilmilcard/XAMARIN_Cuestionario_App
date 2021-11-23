@@ -45,7 +45,6 @@
                     
                 </StackLayout>
                 
-
                 <controls:GradientToogleButton
                     x:Name="FloatingActionButton2"
                     Margin="0,0,0,0"
@@ -62,7 +61,7 @@
                     UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"
                     HeightRequest="100"
                     WidthRequest="350"/>
-
+                    
                 <Label 
                     Text="You will be presented with 10 True of False questions" 
                     FontFamily="{StaticResource NormalFont}" 
@@ -185,7 +184,6 @@
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_4"
                             Command="{Binding MultipleChoiseCommand}"/>
-
                     </StackLayout>
 
                 </StackLayout>

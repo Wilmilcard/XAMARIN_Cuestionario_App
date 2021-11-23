@@ -38,7 +38,7 @@
                     HorizontalOptions="Center" />
 
                 <Label
-                    Text="Version 1.0.0"
+                    Text="Version 1.2.0"
                     FontFamily="{StaticResource BoldFont}" 
                     FontSize="Micro"
                     TextColor="{StaticResource Violeta}"

@@ -38,8 +38,8 @@ namespace App_Prueba.Clases
                 var response = await http.GetAsync(url);
                 if(response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var jsonstring = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<T>(jsonstring);
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<T>(jsonString);
                 }
 
             }
