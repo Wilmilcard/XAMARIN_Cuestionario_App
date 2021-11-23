@@ -164,7 +164,7 @@
                             UnselectedText="True / False"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_3"
-                            Command="{Binding BoolCommand}"/>
+                            /> <!--Command="{Binding BoolCommand}"-->
 
                         <controls:GradientToogleButton
                             x:Name="choiseType2"
@@ -183,7 +183,7 @@
                             UnselectedText="Multiple Choice"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_4"
-                            Command="{Binding MultipleChoiseCommand}"/>
+                            /> <!--Command="{Binding MultipleChoiseCommand}"-->
                     </StackLayout>
 
                 </StackLayout>

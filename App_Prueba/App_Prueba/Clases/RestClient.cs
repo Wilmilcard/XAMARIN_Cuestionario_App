@@ -14,6 +14,8 @@ namespace App_Prueba.Clases
         {
             try
             {
+                //var json = "{\"error\":\"mensaje\"}";
+
                 var _diffculty = "medium";
                 switch (((App)Application.Current).Dificultad)
                 {

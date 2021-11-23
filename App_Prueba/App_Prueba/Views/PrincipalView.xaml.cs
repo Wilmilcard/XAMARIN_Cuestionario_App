@@ -25,7 +25,10 @@ namespace App_Prueba.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new GameView()));
+            if(((App)Application.Current).ModeGame == 0)
+                await Navigation.PushModalAsync(new NavigationPage(new GameBooleanView()));
+            if (((App)Application.Current).ModeGame == 1)
+                await Navigation.PushModalAsync(new NavigationPage(new GameChoiseView()));
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
@@ -67,20 +70,5 @@ namespace App_Prueba.Views
             this.choiseType1.IsSelected = false;
         }
 
-        private async void Button_Clicked_2(object sender, EventArgs e)
-        {
-            var rest = new RestClient();
-            //var rpta = await rest.Get<Result>("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean");
-            //var rpta = await rest.Get<Result>("https://opentdb.com/api.php?amount=1&type=multiple");
-            var json = "{\"error\":\"mensaje\"}";
-            
-            HttpClient http = new HttpClient();
-            var response = await http.GetAsync("https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple");
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                var jsonstring = await response.Content.ReadAsStringAsync();
-                var rpta = JsonConvert.DeserializeObject<Result>(jsonstring);
-            }
-        }
     }
 }
