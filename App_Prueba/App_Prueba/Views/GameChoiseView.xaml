@@ -10,7 +10,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <xamanimation:StoryBoard x:Key="FloatingButtonEnter"  Target="{x:Reference FloatingActionButton}">
-                <xamanimation:TranslateToAnimation Duration="130" TranslateY="250" />
+                <xamanimation:TranslateToAnimation Duration="150" TranslateY="250" />
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
             <xamanimation:StoryBoard x:Key="FloatingButtonEnter2"  Target="{x:Reference FloatingActionButton2}">
@@ -18,24 +18,27 @@
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
             <xamanimation:StoryBoard x:Key="FloatingButtonEnter3"  Target="{x:Reference FloatingActionButton3}">
-                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation Duration="200" TranslateY="250" />
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
             <xamanimation:StoryBoard x:Key="FloatingButtonEnter4"  Target="{x:Reference FloatingActionButton4}">
-                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation Duration="320" TranslateY="250" />
                 <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
             </xamanimation:StoryBoard>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#08142a" />
             </Style>
-            <Style TargetType="controls:GradientButton">
-                <Setter Property="HeightRequest" Value="200" />
-                <Setter Property="WidthRequest" Value="200" />
+            <Style TargetType="controls:GradientToogleButton">
+                <Setter Property="HeightRequest" Value="180" />
+                <Setter Property="WidthRequest" Value="180" />
                 <Setter Property="CornerRadius" Value="18" />
-                <Setter Property="Margin" Value="0,0,0,0" />
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="FontSize" Value="16" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="IsSelected" Value="False" />
+                <Setter Property="AlternativeTextColor" Value="#0463E1" />
+                <Setter Property="BarBackgroundColor" Value="#bcd8f6" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -64,35 +67,38 @@
                     GradientStartColor="{StaticResource Azul}"
                     HeightRequest="80"
                     WidthRequest="800"
-                    Text="Category"
+                    Text="Entertainment: Television"
                     HorizontalOptions="Center"
                     TextColor="White"/>
                 <!--Text="{Binding Categoria,Mode=TwoWay}"-->
 
-                <Label  Text="Pregunta"
+                <Label  Text="Which of the following actors portrayed the Ninth Doctor in the British television show &quot;Doctor Who&quot;?"
                        HorizontalTextAlignment="Center" 
                        VerticalTextAlignment="Center"
-                       FontSize="Large" 
+                       FontSize="Medium" 
                        FontFamily="{StaticResource NormalFont}"
                        VerticalOptions="CenterAndExpand" 
-                       Margin="25"/>
+                       Margin="20"/>
                 <!--Text="{Binding Pregunta, Mode=TwoWay}"-->
 
                 <StackLayout Orientation="Horizontal" 
                              Margin="0" 
                              HorizontalOptions="Center">
 
-                    <controls:GradientButton
-                            x:Name="FloatingActionButton"
-                            GradientEndColor="{StaticResource VerdeOscuro}"
-                            GradientStartColor="{StaticResource Verde}"
-                            Text="True"/>
+                    <controls:GradientToogleButton
+                        x:Name="FloatingActionButton"
+                        GradientEndColor="{StaticResource Azul}"
+                        GradientStartColor="{StaticResource Violeta}"
+                        SelectedText="Christopher Eccleston"
+                        UnselectedText="Christopher Eccleston"/>
+                    <!--UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"-->
 
-                    <controls:GradientButton
-                            x:Name="FloatingActionButton2"
-                            GradientEndColor="{StaticResource Naranja}"
-                            GradientStartColor="{StaticResource Rojo}"
-                            Text="False"/>
+                    <controls:GradientToogleButton
+                        x:Name="FloatingActionButton2"
+                        GradientEndColor="{StaticResource Naranja}"
+                        GradientStartColor="{StaticResource Rojo}"
+                        SelectedText="David Tennant"
+                        UnselectedText="David Tennant"/>
 
                 </StackLayout>
 
@@ -100,17 +106,19 @@
                              Margin="0" 
                              HorizontalOptions="Center">
 
-                    <controls:GradientButton
-                            x:Name="FloatingActionButton3"
-                            GradientEndColor="{StaticResource VerdeOscuro}"
-                            GradientStartColor="{StaticResource Verde}"
-                            Text="True"/>
+                    <controls:GradientToogleButton
+                        x:Name="FloatingActionButton3"
+                        GradientEndColor="{StaticResource Verde}"
+                        GradientStartColor="{StaticResource VerdeOscuro}"
+                        SelectedText="Matt Smith"
+                        UnselectedText="Matt Smith"/>
 
-                    <controls:GradientButton
-                            x:Name="FloatingActionButton4"
-                            GradientEndColor="{StaticResource Naranja}"
-                            GradientStartColor="{StaticResource Rojo}"
-                            Text="False"/>
+                    <controls:GradientToogleButton
+                        x:Name="FloatingActionButton4"
+                        GradientEndColor="{StaticResource Amarillo}"
+                        GradientStartColor="{StaticResource AmarilloOscuro}"
+                        SelectedText="Tom Baker"
+                        UnselectedText="Tom Baker"/>
 
                 </StackLayout>
 
