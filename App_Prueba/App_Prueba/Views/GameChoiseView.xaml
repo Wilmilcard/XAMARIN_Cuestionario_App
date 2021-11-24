@@ -1,12 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App_Prueba.Views.GameChoiseView">
+             x:Class="App_Prueba.Views.GameChoiseView"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:controls="clr-namespace:App_Prueba.Controls;assembly=App_Prueba"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FBFBFB">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter"  Target="{x:Reference FloatingActionButton}">
+                <xamanimation:TranslateToAnimation Duration="130" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter2"  Target="{x:Reference FloatingActionButton2}">
+                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter3"  Target="{x:Reference FloatingActionButton3}">
+                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter4"  Target="{x:Reference FloatingActionButton4}">
+                <xamanimation:TranslateToAnimation Duration="250" TranslateY="250" />
+                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut"/>
+            </xamanimation:StoryBoard>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#08142a" />
+            </Style>
+            <Style TargetType="controls:GradientButton">
+                <Setter Property="HeightRequest" Value="200" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter}"/>
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter2}"/>
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter3}"/>
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter4}"/>
+        </EventTrigger>
+    </ContentPage.Triggers>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+
+                <controls:GradientButton
+                    Margin="0"
+                    FontSize="20"
+                    GradientEndColor="{StaticResource Violeta}"
+                    GradientStartColor="{StaticResource Azul}"
+                    HeightRequest="80"
+                    WidthRequest="800"
+                    Text="Category"
+                    HorizontalOptions="Center"
+                    TextColor="White"/>
+                <!--Text="{Binding Categoria,Mode=TwoWay}"-->
+
+                <Label  Text="Pregunta"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center"
+                       FontSize="Large" 
+                       FontFamily="{StaticResource NormalFont}"
+                       VerticalOptions="CenterAndExpand" 
+                       Margin="25"/>
+                <!--Text="{Binding Pregunta, Mode=TwoWay}"-->
+
+                <StackLayout Orientation="Horizontal" 
+                             Margin="0" 
+                             HorizontalOptions="Center">
+
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton"
+                            GradientEndColor="{StaticResource VerdeOscuro}"
+                            GradientStartColor="{StaticResource Verde}"
+                            Text="True"/>
+
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton2"
+                            GradientEndColor="{StaticResource Naranja}"
+                            GradientStartColor="{StaticResource Rojo}"
+                            Text="False"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             Margin="0" 
+                             HorizontalOptions="Center">
+
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton3"
+                            GradientEndColor="{StaticResource VerdeOscuro}"
+                            GradientStartColor="{StaticResource Verde}"
+                            Text="True"/>
+
+                    <controls:GradientButton
+                            x:Name="FloatingActionButton4"
+                            GradientEndColor="{StaticResource Naranja}"
+                            GradientStartColor="{StaticResource Rojo}"
+                            Text="False"/>
+
+                </StackLayout>
+
+                <controls:GradientProgressBar
+                    AlternativeTextColor="#0463E1"
+                    BarBackgroundColor="#bcd8f6"
+                    CornerRadius="0"
+                    FontSize="18"
+                    GradientEndColor="{StaticResource Violeta}"
+                    GradientStartColor="{StaticResource Azul}"
+                    HeightRequest="30"
+                    Percentage="{Binding PorcentajeBar}"
+                    TextColor="White" />
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
+
 </ContentPage>

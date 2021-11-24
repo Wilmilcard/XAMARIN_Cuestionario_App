@@ -21,6 +21,15 @@
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#08142a" />
             </Style>
+            <Style TargetType="controls:GradientButton">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="Margin" Value="0,25,0,0" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -68,31 +77,17 @@
                     
                     <controls:GradientButton
                             x:Name="FloatingActionButton"
-                            Margin="0,25,0,0"
-                            CornerRadius="18"
-                            FontSize="20"
                             GradientEndColor="{StaticResource VerdeOscuro}"
                             GradientStartColor="{StaticResource Verde}"
-                            HeightRequest="50"
-                            WidthRequest="150"
-                            HorizontalOptions="Center"
                             Text="True"
-                            TextColor="White"
                             Command="{Binding AnswerTCommand}" 
                             Clicked="Button_Clicked_1"/>
 
                     <controls:GradientButton
                             x:Name="FloatingActionButton2"
-                            Margin="0,25,0,0"
-                            CornerRadius="18"
-                            FontSize="20"
                             GradientEndColor="{StaticResource Naranja}"
                             GradientStartColor="{StaticResource Rojo}"
-                            HeightRequest="50"
-                            WidthRequest="150"
-                            HorizontalOptions="Center"
                             Text="False"
-                            TextColor="White"
                             Command="{Binding AnswerFCommand}" 
                             Clicked="Button_Clicked"/>
 
