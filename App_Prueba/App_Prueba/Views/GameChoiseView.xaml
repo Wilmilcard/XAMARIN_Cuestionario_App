@@ -36,7 +36,7 @@
                 <Setter Property="FontSize" Value="16" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="IsSelected" Value="False" />
+                <Setter Property="IsSelected" Value="true" />
                 <Setter Property="AlternativeTextColor" Value="#0463E1" />
                 <Setter Property="BarBackgroundColor" Value="#bcd8f6" />
             </Style>
@@ -90,7 +90,8 @@
                         GradientEndColor="{StaticResource Azul}"
                         GradientStartColor="{StaticResource Violeta}"
                         SelectedText="Christopher Eccleston"
-                        UnselectedText="Christopher Eccleston"/>
+                        UnselectedText="Christopher Eccleston"
+                        Clicked="FloatingActionButton_Clicked"/>
                     <!--UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"-->
 
                     <controls:GradientToogleButton
@@ -98,7 +99,8 @@
                         GradientEndColor="{StaticResource Naranja}"
                         GradientStartColor="{StaticResource Rojo}"
                         SelectedText="David Tennant"
-                        UnselectedText="David Tennant"/>
+                        UnselectedText="David Tennant"
+                        Clicked="FloatingActionButton2_Clicked"/>
 
                 </StackLayout>
 
@@ -111,14 +113,16 @@
                         GradientEndColor="{StaticResource Verde}"
                         GradientStartColor="{StaticResource VerdeOscuro}"
                         SelectedText="Matt Smith"
-                        UnselectedText="Matt Smith"/>
+                        UnselectedText="Matt Smith"
+                        Clicked="FloatingActionButton3_Clicked"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton4"
                         GradientEndColor="{StaticResource Amarillo}"
                         GradientStartColor="{StaticResource AmarilloOscuro}"
                         SelectedText="Tom Baker"
-                        UnselectedText="Tom Baker"/>
+                        UnselectedText="Tom Baker"
+                        Clicked="FloatingActionButton4_Clicked"/>
 
                 </StackLayout>
 

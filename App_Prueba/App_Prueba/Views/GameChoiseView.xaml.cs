@@ -16,5 +16,33 @@ namespace App_Prueba.Views
         {
             InitializeComponent();
         }
+
+        private void FloatingActionButton_Clicked(object sender, TappedEventArgs e)
+        {
+            this.FloatingActionButton2.IsSelected = true;
+            this.FloatingActionButton3.IsSelected = true;
+            this.FloatingActionButton4.IsSelected = true;
+        }
+
+        private void FloatingActionButton2_Clicked(object sender, TappedEventArgs e)
+        {
+            this.FloatingActionButton.IsSelected = true;
+            this.FloatingActionButton3.IsSelected = true;
+            this.FloatingActionButton4.IsSelected = true;
+        }
+
+        private void FloatingActionButton3_Clicked(object sender, TappedEventArgs e)
+        {
+            this.FloatingActionButton2.IsSelected = true;
+            this.FloatingActionButton.IsSelected = true;
+            this.FloatingActionButton4.IsSelected = true;
+        }
+
+        private void FloatingActionButton4_Clicked(object sender, TappedEventArgs e)
+        {
+            this.FloatingActionButton2.IsSelected = true;
+            this.FloatingActionButton3.IsSelected = true;
+            this.FloatingActionButton.IsSelected = true;
+        }
     }
 }
