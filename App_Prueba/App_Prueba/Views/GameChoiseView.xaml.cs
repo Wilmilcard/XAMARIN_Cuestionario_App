@@ -25,7 +25,7 @@ namespace App_Prueba.Views
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
 
-            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+            if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
@@ -35,7 +35,7 @@ namespace App_Prueba.Views
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
 
-            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+            if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
@@ -45,7 +45,7 @@ namespace App_Prueba.Views
             this.FloatingActionButton.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
 
-            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+            if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
@@ -55,7 +55,7 @@ namespace App_Prueba.Views
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton.IsSelected = true;
 
-            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+            if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
     }

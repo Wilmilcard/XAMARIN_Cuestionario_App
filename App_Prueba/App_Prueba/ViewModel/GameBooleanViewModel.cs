@@ -37,7 +37,7 @@ namespace App_Prueba.ViewModel
 
         public GameBooleanViewModel()
         {
-            ((App)Application.Current).RespuestasBool = new ObservableCollection<AnswerBool>();
+            ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.PorcentajeBar = "0.1";
             this.GetFirst();
         }
@@ -66,7 +66,7 @@ namespace App_Prueba.ViewModel
 
         public void RespVerdadera()
         {
-            ((App)Application.Current).RespuestasBool.Add(new AnswerBool() 
+            ((App)Application.Current).Respuestas.Add(new Answer() 
             { 
                 id_question = this.PreguntaActual, 
                 question = this.Pregunta, 
@@ -78,7 +78,7 @@ namespace App_Prueba.ViewModel
 
         public async void RespFalsa()
         {
-            ((App)Application.Current).RespuestasBool.Add(new AnswerBool() 
+            ((App)Application.Current).Respuestas.Add(new Answer() 
             { 
                 id_question = this.PreguntaActual, 
                 question = this.Pregunta, 

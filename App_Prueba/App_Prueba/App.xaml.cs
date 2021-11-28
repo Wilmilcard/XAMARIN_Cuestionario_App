@@ -11,15 +11,13 @@ namespace App_Prueba
     {
         public ObservableCollection<QuestionBool> ListaPreguntasBool = new ObservableCollection<QuestionBool>();
         public ObservableCollection<QuestionChoise> ListaPreguntasChoise = new ObservableCollection<QuestionChoise>();
-        public ObservableCollection<AnswerBool> RespuestasBool = new ObservableCollection<AnswerBool>();
-        public ObservableCollection<AnswerChoise> RespuestasChoise = new ObservableCollection<AnswerChoise>();
+        public ObservableCollection<Answer> Respuestas = new ObservableCollection<Answer>();
         public int Dificultad = 1;
         public int ModeGame = 0; // 0 = bool, 1 = Multiple
 
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new PrincipalView());
         }
 

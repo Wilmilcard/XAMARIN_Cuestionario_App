@@ -11,15 +11,15 @@ namespace App_Prueba.ViewModel
     public class ScoreViewModel : BaseViewModel
     {
         private int _respuestasCorrectas = 0;
-        private ObservableCollection<AnswerBool> _listaRespuesta = new ObservableCollection<AnswerBool>();
+        private ObservableCollection<Answer> _listaRespuesta = new ObservableCollection<Answer>();
 
         public int RespuestasCorrectas { get { return _respuestasCorrectas; } set { SetValue(ref _respuestasCorrectas, value); } }
-        public ObservableCollection<AnswerBool> ListaRespuesta { get { return _listaRespuesta; } set { SetValue(ref _listaRespuesta, value); } }
+        public ObservableCollection<Answer> ListaRespuesta { get { return _listaRespuesta; } set { SetValue(ref _listaRespuesta, value); } }
 
 
         public ScoreViewModel()
         {
-            this.ListaRespuesta = ((App)Application.Current).RespuestasBool;
+            this.ListaRespuesta = ((App)Application.Current).Respuestas;
             this.RespuestasCorrectas = this.ListaRespuesta.Where(x => x.answerCorrect).ToList().Count;
         }
     }

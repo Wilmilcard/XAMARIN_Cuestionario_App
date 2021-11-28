@@ -43,7 +43,7 @@ namespace App_Prueba.ViewModel
 
         public GameChoiseViewModel()
         {
-            ((App)Application.Current).RespuestasChoise = new ObservableCollection<AnswerChoise>();
+            ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.PorcentajeBar = "0.1";
             this.GetFirst();
         }
@@ -61,6 +61,8 @@ namespace App_Prueba.ViewModel
                 lista_respuestas.Add(i);
             };
             lista_respuestas.Add(this.RespuestaCorrecta);
+
+            //Las respuestas quedan organizadas aleatoriamente ↓↓↓
             lista_respuestas.OrderBy(x => rnd.Next());
 
             this.respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
@@ -71,7 +73,18 @@ namespace App_Prueba.ViewModel
 
         public void Answer1()
         {
+            var AnswerUser = new Answer();
+            AnswerUser.id_question = this.PreguntaActual;
+            AnswerUser.question = this.Pregunta;
+            AnswerUser.answerUser = false;
+            AnswerUser.answerCorrect = false;
 
+            if (this.respuesta1 == this.RespuestaCorrecta)
+            {
+                AnswerUser.answerUser = true;
+                AnswerUser.answerCorrect = true;
+            };
+            ((App)Application.Current).Respuestas.Add(AnswerUser);
         }
 
         public void Answer2()

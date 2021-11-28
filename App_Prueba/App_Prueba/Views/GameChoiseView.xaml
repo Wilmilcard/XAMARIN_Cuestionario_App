@@ -89,7 +89,8 @@
                         GradientStartColor="{StaticResource Violeta}"
                         SelectedText="{Binding Respuesta1, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta1, Mode=TwoWay}"
-                        Clicked="FloatingActionButton_Clicked"/>
+                        Clicked="FloatingActionButton_Clicked"
+                        Command="{Binding Answer1Command}"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton2"
@@ -97,7 +98,8 @@
                         GradientStartColor="{StaticResource Rojo}"
                         SelectedText="{Binding Respuesta2, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta2, Mode=TwoWay}"
-                        Clicked="FloatingActionButton2_Clicked"/>
+                        Clicked="FloatingActionButton2_Clicked"
+                        Command="{Binding Answer2Command}"/>
 
                 </StackLayout>
 
@@ -111,7 +113,8 @@
                         GradientStartColor="{StaticResource VerdeOscuro}"
                         SelectedText="{Binding Respuesta3, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta3, Mode=TwoWay}"
-                        Clicked="FloatingActionButton3_Clicked"/>
+                        Clicked="FloatingActionButton3_Clicked"
+                        Command="{Binding Answer3Command}"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton4"
@@ -119,7 +122,8 @@
                         GradientStartColor="{StaticResource AmarilloOscuro}"
                         SelectedText="{Binding Respuesta4, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta4, Mode=TwoWay}"
-                        Clicked="FloatingActionButton4_Clicked"/>
+                        Clicked="FloatingActionButton4_Clicked"
+                        Command="{Binding Answer4Command}"/>
 
                 </StackLayout>
 

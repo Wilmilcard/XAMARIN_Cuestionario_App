@@ -21,13 +21,13 @@ namespace App_Prueba.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if(((App)Application.Current).RespuestasBool.Count() == 10)
+            if(((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            if (((App)Application.Current).RespuestasBool.Count() == 10)
+            if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
     }
