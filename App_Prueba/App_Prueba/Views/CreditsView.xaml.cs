@@ -52,7 +52,7 @@ namespace App_Prueba.Views
         {
             try
             {
-                await Browser.OpenAsync("https://www.linkedin.com/in/juan-david-leon-barrera-20a0451a8/", BrowserLaunchMode.SystemPreferred);
+                await Browser.OpenAsync("https://www.linkedin.com/in/%F0%9F%A5%91-juan-david-leon-barrera-20a0451a8/", BrowserLaunchMode.SystemPreferred);
             }
             catch (Exception ex)
             {

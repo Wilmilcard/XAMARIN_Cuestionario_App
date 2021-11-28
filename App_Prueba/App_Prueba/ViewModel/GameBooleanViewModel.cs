@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace App_Prueba.ViewModel
 {
-    public class GameBooleanModel : BaseViewModel
+    public class GameBooleanViewModel : BaseViewModel
     {
         public INavigation Navigation { get; set; }
 
@@ -35,7 +35,7 @@ namespace App_Prueba.ViewModel
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
 
 
-        public GameBooleanModel()
+        public GameBooleanViewModel()
         {
             ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
             this.PorcentajeBar = "0.1";

@@ -16,7 +16,7 @@ namespace App_Prueba.Views
         public GameBooleanView()
         {
             InitializeComponent();
-            BindingContext = new GameBooleanModel();
+            BindingContext = new GameBooleanViewModel();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
