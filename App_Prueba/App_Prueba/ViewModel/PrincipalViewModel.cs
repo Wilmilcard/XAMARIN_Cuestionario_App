@@ -53,6 +53,7 @@ namespace App_Prueba.ViewModel
             ((App)Application.Current).ListaPreguntasBool = new ObservableCollection<QuestionBool>();
             ((App)Application.Current).ListaPreguntasChoise = new ObservableCollection<QuestionChoise>();
             this.ListaPreguntasBool = new ObservableCollection<QuestionBool>();
+            this.ListaPreguntasChoise = new ObservableCollection<QuestionChoise>();
 
             //Consulta por modo de juego
             if (((App)Application.Current).ModeGame == 0)
@@ -92,7 +93,7 @@ namespace App_Prueba.ViewModel
                         type = pregunta.type,
                         difficulty = pregunta.difficulty,
                         question = HttpUtility.HtmlDecode(pregunta.question),
-                        correct_answer = pregunta.correct_answer,
+                        correct_answer = HttpUtility.HtmlDecode(pregunta.correct_answer),
                         incorrect_answers = pregunta.incorrect_answers
                     });
                 }

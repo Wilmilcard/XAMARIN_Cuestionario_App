@@ -87,16 +87,16 @@
                         x:Name="FloatingActionButton"
                         GradientEndColor="{StaticResource Azul}"
                         GradientStartColor="{StaticResource Violeta}"
-                        SelectedText="{Binding RespuestaCorrecta, Mode=TwoWay}"
-                        UnselectedText="{Binding RespuestaCorrecta, Mode=TwoWay}"
+                        SelectedText="{Binding Respuesta1, Mode=TwoWay}"
+                        UnselectedText="{Binding Respuesta1, Mode=TwoWay}"
                         Clicked="FloatingActionButton_Clicked"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton2"
                         GradientEndColor="{StaticResource Naranja}"
                         GradientStartColor="{StaticResource Rojo}"
-                        SelectedText="{Binding RespuestaIncorrecta1, Mode=TwoWay}"
-                        UnselectedText="{Binding RespuestaIncorrecta1, Mode=TwoWay}"
+                        SelectedText="{Binding Respuesta2, Mode=TwoWay}"
+                        UnselectedText="{Binding Respuesta2, Mode=TwoWay}"
                         Clicked="FloatingActionButton2_Clicked"/>
 
                 </StackLayout>
@@ -109,16 +109,16 @@
                         x:Name="FloatingActionButton3"
                         GradientEndColor="{StaticResource Verde}"
                         GradientStartColor="{StaticResource VerdeOscuro}"
-                        SelectedText="{Binding RespuestaIncorrecta2, Mode=TwoWay}"
-                        UnselectedText="{Binding RespuestaIncorrecta2, Mode=TwoWay}"
+                        SelectedText="{Binding Respuesta3, Mode=TwoWay}"
+                        UnselectedText="{Binding Respuesta3, Mode=TwoWay}"
                         Clicked="FloatingActionButton3_Clicked"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton4"
                         GradientEndColor="{StaticResource Amarillo}"
                         GradientStartColor="{StaticResource AmarilloOscuro}"
-                        SelectedText="{Binding RespuestaIncorrecta3, Mode=TwoWay}"
-                        UnselectedText="{Binding RespuestaIncorrecta3, Mode=TwoWay}"
+                        SelectedText="{Binding Respuesta4, Mode=TwoWay}"
+                        UnselectedText="{Binding Respuesta4, Mode=TwoWay}"
                         Clicked="FloatingActionButton4_Clicked"/>
 
                 </StackLayout>
