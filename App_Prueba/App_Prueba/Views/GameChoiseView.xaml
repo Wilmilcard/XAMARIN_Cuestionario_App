@@ -67,19 +67,17 @@
                     GradientStartColor="{StaticResource Azul}"
                     HeightRequest="80"
                     WidthRequest="800"
-                    Text="Entertainment: Television"
+                    Text="{Binding Categoria,Mode=TwoWay}"
                     HorizontalOptions="Center"
                     TextColor="White"/>
-                <!--Text="{Binding Categoria,Mode=TwoWay}"-->
 
-                <Label  Text="Which of the following actors portrayed the Ninth Doctor in the British television show &quot;Doctor Who&quot;?"
+                <Label  Text="{Binding Pregunta, Mode=TwoWay}"
                        HorizontalTextAlignment="Center" 
                        VerticalTextAlignment="Center"
                        FontSize="Medium" 
                        FontFamily="{StaticResource NormalFont}"
                        VerticalOptions="CenterAndExpand" 
                        Margin="20"/>
-                <!--Text="{Binding Pregunta, Mode=TwoWay}"-->
 
                 <StackLayout Orientation="Horizontal" 
                              Margin="0" 
@@ -89,17 +87,16 @@
                         x:Name="FloatingActionButton"
                         GradientEndColor="{StaticResource Azul}"
                         GradientStartColor="{StaticResource Violeta}"
-                        SelectedText="Christopher Eccleston"
-                        UnselectedText="Christopher Eccleston"
+                        SelectedText="{Binding RespuestaCorrecta, Mode=TwoWay}"
+                        UnselectedText="{Binding RespuestaCorrecta, Mode=TwoWay}"
                         Clicked="FloatingActionButton_Clicked"/>
-                    <!--UnselectedText="{Binding Stats, Mode=OneWay, StringFormat='Total Questions: {0}'}"-->
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton2"
                         GradientEndColor="{StaticResource Naranja}"
                         GradientStartColor="{StaticResource Rojo}"
-                        SelectedText="David Tennant"
-                        UnselectedText="David Tennant"
+                        SelectedText="{Binding RespuestaIncorrecta1, Mode=TwoWay}"
+                        UnselectedText="{Binding RespuestaIncorrecta1, Mode=TwoWay}"
                         Clicked="FloatingActionButton2_Clicked"/>
 
                 </StackLayout>
@@ -112,16 +109,16 @@
                         x:Name="FloatingActionButton3"
                         GradientEndColor="{StaticResource Verde}"
                         GradientStartColor="{StaticResource VerdeOscuro}"
-                        SelectedText="Matt Smith"
-                        UnselectedText="Matt Smith"
+                        SelectedText="{Binding RespuestaIncorrecta2, Mode=TwoWay}"
+                        UnselectedText="{Binding RespuestaIncorrecta2, Mode=TwoWay}"
                         Clicked="FloatingActionButton3_Clicked"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton4"
                         GradientEndColor="{StaticResource Amarillo}"
                         GradientStartColor="{StaticResource AmarilloOscuro}"
-                        SelectedText="Tom Baker"
-                        UnselectedText="Tom Baker"
+                        SelectedText="{Binding RespuestaIncorrecta3, Mode=TwoWay}"
+                        UnselectedText="{Binding RespuestaIncorrecta3, Mode=TwoWay}"
                         Clicked="FloatingActionButton4_Clicked"/>
 
                 </StackLayout>

@@ -19,8 +19,8 @@ namespace App_Prueba.ViewModel
 
         private int _preguntaActual = 0;
         private double _porcentaje = 0.1;
-        private string _categoria, _pregunta, _porcentajeBar, _respuestaCorrecta;
-        private ObservableCollection<QuestionBool> _listaPreguntas = new ObservableCollection<QuestionBool>();
+        private string _categoria, _pregunta, _porcentajeBar, _respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3;
+        private ObservableCollection<QuestionChoise> _listaPreguntas = new ObservableCollection<QuestionChoise>();
         public int Dificultad = 1;
 
         public int PreguntaActual { get { return _preguntaActual; } set { _preguntaActual = value; } }
@@ -29,7 +29,10 @@ namespace App_Prueba.ViewModel
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
-        public ObservableCollection<QuestionBool> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
+        public string RespuestaIncorrecta1 { get { return respuestaIncorrecta1; } set { SetValue(ref respuestaIncorrecta1, value); } }
+        public string RespuestaIncorrecta2 { get { return respuestaIncorrecta2; } set { SetValue(ref respuestaIncorrecta2, value); } }
+        public string RespuestaIncorrecta3 { get { return respuestaIncorrecta3; } set { SetValue(ref respuestaIncorrecta3, value); } }
+        public ObservableCollection<QuestionChoise> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand Answer1Command { get { return new RelayCommand(Respuesta1); } }
         public ICommand Answer2Command { get { return new RelayCommand(Respuesta2); } }
         public ICommand Answer3Command { get { return new RelayCommand(Respuesta3); } }
@@ -37,8 +40,19 @@ namespace App_Prueba.ViewModel
 
         public GameChoiseViewModel()
         {
-            ((App)Application.Current).RespuestasBool = new ObservableCollection<AnswerBool>();
+            ((App)Application.Current).RespuestasChoise = new ObservableCollection<AnswerChoise>();
             this.PorcentajeBar = "0.1";
+            this.GetFirst();
+        }
+
+        public async void GetFirst()
+        {
+            this.Categoria = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].correct_answer;
+            this.RespuestaIncorrecta1 = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].incorrect_answers[0];
+            this.RespuestaIncorrecta2 = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].incorrect_answers[1];
+            this.RespuestaIncorrecta3 = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].incorrect_answers[2];
         }
 
         public void Respuesta1()

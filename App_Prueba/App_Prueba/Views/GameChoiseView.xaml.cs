@@ -19,32 +19,44 @@ namespace App_Prueba.Views
             BindingContext = new GameChoiseViewModel();
         }
 
-        private void FloatingActionButton_Clicked(object sender, TappedEventArgs e)
+        private async void FloatingActionButton_Clicked(object sender, TappedEventArgs e)
         {
             this.FloatingActionButton2.IsSelected = true;
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
+
+            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
-        private void FloatingActionButton2_Clicked(object sender, TappedEventArgs e)
+        private async void FloatingActionButton2_Clicked(object sender, TappedEventArgs e)
         {
             this.FloatingActionButton.IsSelected = true;
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
+
+            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
-        private void FloatingActionButton3_Clicked(object sender, TappedEventArgs e)
+        private async void FloatingActionButton3_Clicked(object sender, TappedEventArgs e)
         {
             this.FloatingActionButton2.IsSelected = true;
             this.FloatingActionButton.IsSelected = true;
             this.FloatingActionButton4.IsSelected = true;
+
+            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
-        private void FloatingActionButton4_Clicked(object sender, TappedEventArgs e)
+        private async void FloatingActionButton4_Clicked(object sender, TappedEventArgs e)
         {
             this.FloatingActionButton2.IsSelected = true;
             this.FloatingActionButton3.IsSelected = true;
             this.FloatingActionButton.IsSelected = true;
+
+            if (((App)Application.Current).RespuestasChoise.Count() == 10)
+                await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
     }
 }

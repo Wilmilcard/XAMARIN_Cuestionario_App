@@ -107,7 +107,7 @@ namespace App_Prueba.Controls
 
                 if (!IsSelected)
                 {
-                    paint.StrokeWidth = 10;
+                    paint.StrokeWidth = 7;
                     paint.Style = SKPaintStyle.Stroke;
                 }
 

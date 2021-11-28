@@ -184,7 +184,8 @@
                             UnselectedText="Multiple Choice"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_4"
-                            /> <!--Command="{Binding MultipleChoiseCommand}"-->
+                            Command="{Binding MultipleChoiseCommand}"
+                            /> 
                     </StackLayout>
 
                 </StackLayout>
