@@ -90,7 +90,7 @@ namespace App_Prueba.Controls
 
             canvas.Clear();
 
-            var strokeWidth = 10;
+            var strokeWidth = 5;
 
             var controlRect = new SKRect(strokeWidth, strokeWidth, info.Width - strokeWidth, height - strokeWidth);
 
