@@ -30,10 +30,10 @@ namespace App_Prueba.ViewModel
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
         public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
-        public ICommand Answer1Command { get { return new RelayCommand(Respuesta); } }
-        public ICommand Answer2Command { get { return new RelayCommand(Respuesta); } }
-        public ICommand Answer3Command { get { return new RelayCommand(Respuesta); } }
-        public ICommand Answer4Command { get { return new RelayCommand(Respuesta); } }
+        public ICommand Answer1Command { get { return new RelayCommand(Respuesta1); } }
+        public ICommand Answer2Command { get { return new RelayCommand(Respuesta2); } }
+        public ICommand Answer3Command { get { return new RelayCommand(Respuesta3); } }
+        public ICommand Answer4Command { get { return new RelayCommand(Respuesta4); } }
 
         public GameChoiseViewModel()
         {
@@ -41,7 +41,22 @@ namespace App_Prueba.ViewModel
             this.PorcentajeBar = "0.1";
         }
 
-        public void Respuesta()
+        public void Respuesta1()
+        {
+
+        }
+
+        public void Respuesta2()
+        {
+
+        }
+
+        public void Respuesta3()
+        {
+
+        }
+
+        public void Respuesta4()
         {
 
         }

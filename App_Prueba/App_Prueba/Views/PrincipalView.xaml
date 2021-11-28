@@ -164,7 +164,8 @@
                             UnselectedText="True / False"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_3"
-                            /> <!--Command="{Binding BoolCommand}"-->
+                            Command="{Binding BoolCommand}"
+                            />
 
                         <controls:GradientToogleButton
                             x:Name="choiseType2"
