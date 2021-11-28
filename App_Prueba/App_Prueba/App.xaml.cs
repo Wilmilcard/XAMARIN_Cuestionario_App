@@ -9,8 +9,10 @@ namespace App_Prueba
 {
     public partial class App : Application
     {
-        public ObservableCollection<Question> ListaPreguntas = new ObservableCollection<Question>();
-        public ObservableCollection<Answer> Respuestas = new ObservableCollection<Answer>();
+        public ObservableCollection<QuestionBool> ListaPreguntasBool = new ObservableCollection<QuestionBool>();
+        public ObservableCollection<QuestionChoise> ListaPreguntasChoise = new ObservableCollection<QuestionChoise>();
+        public ObservableCollection<AnswerBool> RespuestasBool = new ObservableCollection<AnswerBool>();
+        public ObservableCollection<AnswerChoise> RespuestasChoise = new ObservableCollection<AnswerChoise>();
         public int Dificultad = 1;
         public int ModeGame = 0; // 0 = bool, 1 = Multiple
 

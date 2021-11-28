@@ -4,7 +4,7 @@ using System.Text;
 
 namespace App_Prueba.Models
 {
-    public class Question
+    public class QuestionBool
     {
         public string category { get; set; }
         public string type { get; set; }

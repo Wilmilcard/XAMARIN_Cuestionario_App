@@ -4,9 +4,9 @@ using System.Text;
 
 namespace App_Prueba.Models
 {
-    public class Result
+    public class ResultChoise
     {
         public int response_code { get; set; }
-        public List<Question> results { get; set; }
+        public List<QuestionChoise> results { get; set; }
     }
 }

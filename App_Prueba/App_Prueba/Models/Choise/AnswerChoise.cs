@@ -4,11 +4,11 @@ using System.Text;
 
 namespace App_Prueba.Models
 {
-    public class Answer
+    public class AnswerChoise
     {
         public int id_question { get; set; }
         public string question { get; set; }
-        public bool answerUser { get; set; }
-        public bool answerCorrect { get; set; }
+        public string answerUser { get; set; }
+        public string answerCorrect { get; set; }
     }
 }

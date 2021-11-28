@@ -21,7 +21,7 @@ namespace App_Prueba.ViewModel
         private double _porcentaje = 0.1;
         private string _categoria, _pregunta, _porcentajeBar;
         private bool _respuestaCorrecta;
-        private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
+        private ObservableCollection<QuestionBool> _listaPreguntas = new ObservableCollection<QuestionBool>();
         public int Dificultad = 1;
 
         public int PreguntaActual { get { return _preguntaActual; } set { _preguntaActual = value; } }
@@ -30,23 +30,23 @@ namespace App_Prueba.ViewModel
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public bool RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
-        public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
+        public ObservableCollection<QuestionBool> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
         public ICommand AnswerTCommand { get { return new RelayCommand(RespVerdadera); } }
         public ICommand AnswerFCommand { get { return new RelayCommand(RespFalsa); } }
 
 
         public GameBooleanViewModel()
         {
-            ((App)Application.Current).Respuestas = new ObservableCollection<Answer>();
+            ((App)Application.Current).RespuestasBool = new ObservableCollection<AnswerBool>();
             this.PorcentajeBar = "0.1";
             this.GetFirst();
         }
 
         public async void GetFirst()
         {
-            this.Categoria = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].category;
-            this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
-            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
+            this.Categoria = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].correct_answer;
 
         }
 
@@ -56,9 +56,9 @@ namespace App_Prueba.ViewModel
                 return;
 
             this.PreguntaActual++;
-            this.Categoria = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].category;
-            this.Pregunta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].question;
-            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntas[this.PreguntaActual].correct_answer;
+            this.Categoria = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntasBool[this.PreguntaActual].correct_answer;
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
@@ -66,7 +66,7 @@ namespace App_Prueba.ViewModel
 
         public void RespVerdadera()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() 
+            ((App)Application.Current).RespuestasBool.Add(new AnswerBool() 
             { 
                 id_question = this.PreguntaActual, 
                 question = this.Pregunta, 
@@ -78,7 +78,7 @@ namespace App_Prueba.ViewModel
 
         public async void RespFalsa()
         {
-            ((App)Application.Current).Respuestas.Add(new Answer() 
+            ((App)Application.Current).RespuestasBool.Add(new AnswerBool() 
             { 
                 id_question = this.PreguntaActual, 
                 question = this.Pregunta, 

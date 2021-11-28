@@ -14,10 +14,12 @@ namespace App_Prueba.ViewModel
 {
     public class PrincipalViewModel : BaseViewModel
     {
-        private ObservableCollection<Question> _listaPreguntas = new ObservableCollection<Question>();
+        private ObservableCollection<QuestionBool> _listaPreguntasBool = new ObservableCollection<QuestionBool>();
+        private ObservableCollection<QuestionChoise> _listaPreguntasChoise = new ObservableCollection<QuestionChoise>();
         private string _stats;
 
-        public ObservableCollection<Question> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
+        public ObservableCollection<QuestionBool> ListaPreguntasBool { get { return _listaPreguntasBool; } set { _listaPreguntasBool = value; } }
+        public ObservableCollection<QuestionChoise> ListaPreguntasChoise { get { return _listaPreguntasChoise; } set { _listaPreguntasChoise = value; } }
         public ICommand EasyCommand { get { return new RelayCommand(easy); } }
         public ICommand MediumCommand { get { return new RelayCommand(medium); } }
         public ICommand HardCommand { get { return new RelayCommand(hard); } }
@@ -43,29 +45,61 @@ namespace App_Prueba.ViewModel
 
         public async void GetAll()
         {
-            var Preguntas = new Result();
+            var PreguntasBool = new ResultBool();
+            var PreguntasChoise = new ResultChoise();
             var rest = new RestClient();
-            ((App)Application.Current).ListaPreguntas = new ObservableCollection<Question>();
-            this.ListaPreguntas = new ObservableCollection<Question>();
+            var rptaBool = new ResultBool();
+            var rptaChoise = new ResultChoise();
+            ((App)Application.Current).ListaPreguntasBool = new ObservableCollection<QuestionBool>();
+            ((App)Application.Current).ListaPreguntasChoise = new ObservableCollection<QuestionChoise>();
+            this.ListaPreguntasBool = new ObservableCollection<QuestionBool>();
 
-            var rpta = await rest.Get<Result>();
-            if (rpta != null)
-                Preguntas = rpta;
-
-            foreach (var pregunta in Preguntas.results)
+            //Consulta por modo de juego
+            if (((App)Application.Current).ModeGame == 0)
             {
-                this.ListaPreguntas.Add(new Question()
+                rptaBool = await rest.Get<ResultBool>();
+                
+                if (rptaBool != null)
+                    PreguntasBool = rptaBool;
+
+                foreach (var pregunta in PreguntasBool.results)
                 {
-                    category = pregunta.category,
-                    type = pregunta.type,
-                    difficulty = pregunta.difficulty,
-                    question = HttpUtility.HtmlDecode(pregunta.question),
-                    correct_answer = pregunta.correct_answer,
-                    incorrect_answers = pregunta.incorrect_answers
-                });
+                    this.ListaPreguntasBool.Add(new QuestionBool()
+                    {
+                        category = pregunta.category,
+                        type = pregunta.type,
+                        difficulty = pregunta.difficulty,
+                        question = HttpUtility.HtmlDecode(pregunta.question),
+                        correct_answer = pregunta.correct_answer,
+                        incorrect_answers = pregunta.incorrect_answers
+                    });
+                }
+
+                ((App)Application.Current).ListaPreguntasBool = this.ListaPreguntasBool;
+            }
+            else
+            {
+                rptaChoise = await rest.Get<ResultChoise>();
+
+                if (rptaChoise != null)
+                    PreguntasChoise = rptaChoise;
+
+                foreach (var pregunta in PreguntasChoise.results)
+                {
+                    this.ListaPreguntasChoise.Add(new QuestionChoise()
+                    {
+                        category = pregunta.category,
+                        type = pregunta.type,
+                        difficulty = pregunta.difficulty,
+                        question = HttpUtility.HtmlDecode(pregunta.question),
+                        correct_answer = pregunta.correct_answer,
+                        incorrect_answers = pregunta.incorrect_answers
+                    });
+                }
+
+                ((App)Application.Current).ListaPreguntasChoise = this.ListaPreguntasChoise;
             }
 
-            ((App)Application.Current).ListaPreguntas = this.ListaPreguntas;
         }
 
         public void easy()
