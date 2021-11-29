@@ -17,6 +17,20 @@
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#08142a" />
             </Style>
+            <Style TargetType="controls:GradientToogleButton" x:Key="ButtonStyle">
+                <Setter Property="AlternativeTextColor" Value="#0463E1"/>
+                <Setter Property="BarBackgroundColor" Value="#bcd8f6"/>
+                <Setter Property="GradientEndColor" Value="{StaticResource Amarillo}"/>
+                <Setter Property="GradientStartColor" Value="{StaticResource AmarilloOscuro}"/>
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Margin" Value="0,25,0,0" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="IsSelected" Value="False" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -82,58 +96,32 @@
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <controls:GradientToogleButton
                             x:Name="choise1"
-                            Margin="0,25,0,0"
-                            AlternativeTextColor="#0463E1"
-                            BarBackgroundColor="#bcd8f6"
-                            CornerRadius="18"
-                            FontSize="15"
+                            Style="{StaticResource ButtonStyle}"
                             GradientEndColor="{StaticResource Violeta}"
                             GradientStartColor="{StaticResource Azul}"
-                            HeightRequest="40"
-                            HorizontalOptions="Center"
-                            IsSelected="False"
                             SelectedText="Easy"
-                            TextColor="White"
                             UnselectedText="Easy"
-                            WidthRequest="100" 
                             Clicked="GradientToogleButton_Clicked"
                             Command="{Binding EasyCommand}"/>
 
                         <controls:GradientToogleButton
                             x:Name="choise2"
-                            Margin="0,25,0,0"
-                            AlternativeTextColor="#0463E1"
-                            BarBackgroundColor="#bcd8f6"
-                            CornerRadius="18"
-                            FontSize="15"
+                            Style="{StaticResource ButtonStyle}"
                             GradientEndColor="{StaticResource Verde}"
                             GradientStartColor="{StaticResource VerdeOscuro}"
-                            HeightRequest="40"
-                            HorizontalOptions="Center"
                             IsSelected="True"
                             SelectedText="Medium"
-                            TextColor="White"
                             UnselectedText="Medium"
-                            WidthRequest="100" 
                             Clicked="GradientToogleButton_Clicked_1"
                             Command="{Binding MediumCommand}"/>
 
                         <controls:GradientToogleButton
                             x:Name="choise3"
-                            Margin="0,25,0,0"
-                            AlternativeTextColor="#0463E1"
-                            BarBackgroundColor="#bcd8f6"
-                            CornerRadius="18"
-                            FontSize="15"
+                            Style="{StaticResource ButtonStyle}"
                             GradientEndColor="{StaticResource Rojo}"
                             GradientStartColor="{StaticResource Naranja}"
-                            HeightRequest="40"
-                            HorizontalOptions="Center"
-                            IsSelected="False"
                             SelectedText="Hard"
-                            TextColor="White"
                             UnselectedText="Hard"
-                            WidthRequest="100" 
                             Clicked="GradientToogleButton_Clicked_2"
                             Command="{Binding HardCommand}"/>
 
@@ -149,18 +137,9 @@
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <controls:GradientToogleButton
                             x:Name="choiseType1"
-                            Margin="0,25,0,0"
-                            AlternativeTextColor="#0463E1"
-                            BarBackgroundColor="#bcd8f6"
-                            CornerRadius="18"
-                            FontSize="15"
-                            GradientEndColor="{StaticResource Amarillo}"
-                            GradientStartColor="{StaticResource AmarilloOscuro}"
-                            HeightRequest="40"
-                            HorizontalOptions="Center"
+                            Style="{StaticResource ButtonStyle}"
                             IsSelected="True"
                             SelectedText="True / False"
-                            TextColor="White"
                             UnselectedText="True / False"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_3"
@@ -169,18 +148,8 @@
 
                         <controls:GradientToogleButton
                             x:Name="choiseType2"
-                            Margin="0,25,0,0"
-                            AlternativeTextColor="#0463E1"
-                            BarBackgroundColor="#bcd8f6"
-                            CornerRadius="18"
-                            FontSize="15"
-                            GradientEndColor="{StaticResource Amarillo}"
-                            GradientStartColor="{StaticResource AmarilloOscuro}"
-                            HeightRequest="40"
-                            HorizontalOptions="Center"
-                            IsSelected="False"
+                            Style="{StaticResource ButtonStyle}"
                             SelectedText="Multiple Choice"
-                            TextColor="White"
                             UnselectedText="Multiple Choice"
                             WidthRequest="150" 
                             Clicked="GradientToogleButton_Clicked_4"

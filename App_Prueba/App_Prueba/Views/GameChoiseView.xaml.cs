@@ -21,42 +21,26 @@ namespace App_Prueba.Views
 
         private async void FloatingActionButton_Clicked(object sender, TappedEventArgs e)
         {
-            this.clear_buttons();
-
             if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
         private async void FloatingActionButton2_Clicked(object sender, TappedEventArgs e)
         {
-            this.clear_buttons();
-
             if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
         private async void FloatingActionButton3_Clicked(object sender, TappedEventArgs e)
         {
-            this.clear_buttons();
-
             if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
         }
 
         private async void FloatingActionButton4_Clicked(object sender, TappedEventArgs e)
         {
-            this.clear_buttons();
-
             if (((App)Application.Current).Respuestas.Count() == 10)
                 await Navigation.PushModalAsync(new NavigationPage(new ScoreView()));
-        }
-
-        private void clear_buttons()
-        {
-            this.FloatingActionButton.IsSelected = true;
-            this.FloatingActionButton2.IsSelected = true;
-            this.FloatingActionButton3.IsSelected = true;
-            this.FloatingActionButton4.IsSelected = true;
         }
     }
 }
