@@ -59,7 +59,7 @@ namespace App_Prueba.ViewModel
             if (((App)Application.Current).ModeGame == 0)
             {
                 rptaBool = await rest.Get<ResultBool>();
-                
+
                 if (rptaBool != null)
                     PreguntasBool = rptaBool;
 
