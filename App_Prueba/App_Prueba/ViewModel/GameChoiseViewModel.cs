@@ -21,7 +21,7 @@ namespace App_Prueba.ViewModel
 
         private int _preguntaActual = 0;
         private double _porcentaje = 0.1;
-        private string _categoria, _pregunta, _porcentajeBar, _respuestaCorrecta, respuesta1, respuesta2, respuesta3, respuesta4;
+        private string _categoria, _pregunta, _porcentajeBar, _respuestaCorrecta, _respuesta1, _respuesta2, _respuesta3, _respuesta4;
         private ObservableCollection<QuestionChoise> _listaPreguntas = new ObservableCollection<QuestionChoise>();
         public int Dificultad = 1;
 
@@ -31,15 +31,15 @@ namespace App_Prueba.ViewModel
         public string Pregunta { get { return _pregunta; } set { SetValue(ref _pregunta, value); } }
         public string PorcentajeBar { get { return _porcentajeBar; } set { SetValue(ref _porcentajeBar, value); } }
         public string RespuestaCorrecta { get { return _respuestaCorrecta; } set { SetValue(ref _respuestaCorrecta, value); } }
-        public string Respuesta1 { get { return respuesta1; } set { SetValue(ref respuesta1, value); } }
-        public string Respuesta2 { get { return respuesta2; } set { SetValue(ref respuesta2, value); } }
-        public string Respuesta3 { get { return respuesta3; } set { SetValue(ref respuesta3, value); } }
-        public string Respuesta4 { get { return respuesta4; } set { SetValue(ref respuesta4, value); } }
+        public string Respuesta1 { get { return _respuesta1; } set { SetValue(ref _respuesta1, value); } }
+        public string Respuesta2 { get { return _respuesta2; } set { SetValue(ref _respuesta2, value); } }
+        public string Respuesta3 { get { return _respuesta3; } set { SetValue(ref _respuesta3, value); } }
+        public string Respuesta4 { get { return _respuesta4; } set { SetValue(ref _respuesta4, value); } }
         public ObservableCollection<QuestionChoise> ListaPreguntas { get { return _listaPreguntas; } set { _listaPreguntas = value; } }
-        public ICommand Answer1Command { get { return new RelayCommand(Answer1); } }
-        public ICommand Answer2Command { get { return new RelayCommand(Answer2); } }
-        public ICommand Answer3Command { get { return new RelayCommand(Answer3); } }
-        public ICommand Answer4Command { get { return new RelayCommand(Answer4); } }
+        public ICommand AnswerSelected1Command { get { return new RelayCommand(AnswerSelected1); } }
+        public ICommand AnswerSelected2Command { get { return new RelayCommand(AnswerSelected2); } }
+        public ICommand AnswerSelected3Command { get { return new RelayCommand(AnswerSelected3); } }
+        public ICommand AnswerSelected4Command { get { return new RelayCommand(AnswerSelected4); } }
 
         public GameChoiseViewModel()
         {
@@ -65,41 +65,83 @@ namespace App_Prueba.ViewModel
             //Las respuestas quedan organizadas aleatoriamente ↓↓↓
             lista_respuestas.OrderBy(x => rnd.Next());
 
-            this.respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
-            this.respuesta2 = HttpUtility.HtmlDecode(lista_respuestas[1]);
-            this.respuesta3 = HttpUtility.HtmlDecode(lista_respuestas[2]);
-            this.respuesta4 = HttpUtility.HtmlDecode(lista_respuestas[3]);
+            this.Respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
+            this.Respuesta2 = HttpUtility.HtmlDecode(lista_respuestas[1]);
+            this.Respuesta3 = HttpUtility.HtmlDecode(lista_respuestas[2]);
+            this.Respuesta4 = HttpUtility.HtmlDecode(lista_respuestas[3]);
         }
 
-        public void Answer1()
+        public void LoadNextQuestion()
+        {
+            if (this.PreguntaActual >= 9)
+                return;
+
+            var rnd = new Random();
+            this.PreguntaActual++;
+            this.Categoria = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].category;
+            this.Pregunta = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].question;
+            this.RespuestaCorrecta = ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].correct_answer;
+
+            var lista_respuestas = new List<string>();
+            foreach (var i in ((App)Application.Current).ListaPreguntasChoise[this.PreguntaActual].incorrect_answers)
+            {
+                lista_respuestas.Add(i);
+            };
+            lista_respuestas.Add(this.RespuestaCorrecta);
+
+            //Las respuestas quedan organizadas aleatoriamente ↓↓↓
+            lista_respuestas.OrderBy(x => rnd.Next());
+
+            this.Respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
+            this.Respuesta2 = HttpUtility.HtmlDecode(lista_respuestas[1]);
+            this.Respuesta3 = HttpUtility.HtmlDecode(lista_respuestas[2]);
+            this.Respuesta4 = HttpUtility.HtmlDecode(lista_respuestas[3]);
+
+            this.Porcentaje += 0.1;
+            this.PorcentajeBar = Porcentaje.ToString();
+        }
+
+        public void AnswerSelected1()
+        {
+            ((App)Application.Current).Respuestas.Add(createAnswer(this.Respuesta1));
+            this.LoadNextQuestion();
+        }
+
+        public void AnswerSelected2()
+        {
+            ((App)Application.Current).Respuestas.Add(createAnswer(this.Respuesta2));
+            this.LoadNextQuestion();
+        }
+
+        public void AnswerSelected3()
+        {
+            ((App)Application.Current).Respuestas.Add(createAnswer(this.Respuesta3));
+            this.LoadNextQuestion();
+        }
+
+        public void AnswerSelected4()
+        {
+            ((App)Application.Current).Respuestas.Add(createAnswer(this.Respuesta4));
+            this.LoadNextQuestion();
+        }
+
+        private Answer createAnswer(string respuestaActual)
         {
             var AnswerUser = new Answer();
             AnswerUser.id_question = this.PreguntaActual;
             AnswerUser.question = this.Pregunta;
-            AnswerUser.answerUser = false;
-            AnswerUser.answerCorrect = false;
+            AnswerUser.answerUser = this.ValidateAnswer(respuestaActual);
+            AnswerUser.answerCorrect = this.ValidateAnswer(respuestaActual);
 
-            if (this.respuesta1 == this.RespuestaCorrecta)
-            {
-                AnswerUser.answerUser = true;
-                AnswerUser.answerCorrect = true;
-            };
-            ((App)Application.Current).Respuestas.Add(AnswerUser);
+            return AnswerUser;
         }
 
-        public void Answer2()
+        private bool ValidateAnswer(string answer)
         {
-
-        }
-
-        public void Answer3()
-        {
-
-        }
-
-        public void Answer4()
-        {
-
+            if (answer == this.RespuestaCorrecta)
+                return true;
+            
+            return false;
         }
     }
 }

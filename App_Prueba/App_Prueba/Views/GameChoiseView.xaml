@@ -90,7 +90,7 @@
                         SelectedText="{Binding Respuesta1, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta1, Mode=TwoWay}"
                         Clicked="FloatingActionButton_Clicked"
-                        Command="{Binding Answer1Command}"/>
+                        Command="{Binding AnswerSelected1Command}"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton2"
@@ -99,7 +99,7 @@
                         SelectedText="{Binding Respuesta2, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta2, Mode=TwoWay}"
                         Clicked="FloatingActionButton2_Clicked"
-                        Command="{Binding Answer2Command}"/>
+                        Command="{Binding AnswerSelected2Command}"/>
 
                 </StackLayout>
 
@@ -114,7 +114,7 @@
                         SelectedText="{Binding Respuesta3, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta3, Mode=TwoWay}"
                         Clicked="FloatingActionButton3_Clicked"
-                        Command="{Binding Answer3Command}"/>
+                        Command="{Binding AnswerSelected3Command}"/>
 
                     <controls:GradientToogleButton
                         x:Name="FloatingActionButton4"
@@ -123,7 +123,7 @@
                         SelectedText="{Binding Respuesta4, Mode=TwoWay}"
                         UnselectedText="{Binding Respuesta4, Mode=TwoWay}"
                         Clicked="FloatingActionButton4_Clicked"
-                        Command="{Binding Answer4Command}"/>
+                        Command="{Binding AnswerSelected4Command}"/>
 
                 </StackLayout>
 
