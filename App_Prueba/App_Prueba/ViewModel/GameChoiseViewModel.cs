@@ -63,12 +63,12 @@ namespace App_Prueba.ViewModel
             lista_respuestas.Add(this.RespuestaCorrecta);
 
             //Las respuestas quedan organizadas aleatoriamente ↓↓↓
-            lista_respuestas.OrderBy(x => rnd.Next());
+            var lista_mezclada = lista_respuestas.OrderBy(x => rnd.Next()).ToList();
 
-            this.Respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
-            this.Respuesta2 = HttpUtility.HtmlDecode(lista_respuestas[1]);
-            this.Respuesta3 = HttpUtility.HtmlDecode(lista_respuestas[2]);
-            this.Respuesta4 = HttpUtility.HtmlDecode(lista_respuestas[3]);
+            this.Respuesta1 = HttpUtility.HtmlDecode(lista_mezclada[0]);
+            this.Respuesta2 = HttpUtility.HtmlDecode(lista_mezclada[1]);
+            this.Respuesta3 = HttpUtility.HtmlDecode(lista_mezclada[2]);
+            this.Respuesta4 = HttpUtility.HtmlDecode(lista_mezclada[3]);
         }
 
         public void LoadNextQuestion()
@@ -90,12 +90,12 @@ namespace App_Prueba.ViewModel
             lista_respuestas.Add(this.RespuestaCorrecta);
 
             //Las respuestas quedan organizadas aleatoriamente ↓↓↓
-            lista_respuestas.OrderBy(x => rnd.Next());
+            var lista_mezclada = lista_respuestas.OrderBy(x => rnd.Next()).ToList();
 
-            this.Respuesta1 = HttpUtility.HtmlDecode(lista_respuestas[0]);
-            this.Respuesta2 = HttpUtility.HtmlDecode(lista_respuestas[1]);
-            this.Respuesta3 = HttpUtility.HtmlDecode(lista_respuestas[2]);
-            this.Respuesta4 = HttpUtility.HtmlDecode(lista_respuestas[3]);
+            this.Respuesta1 = HttpUtility.HtmlDecode(lista_mezclada[0]);
+            this.Respuesta2 = HttpUtility.HtmlDecode(lista_mezclada[1]);
+            this.Respuesta3 = HttpUtility.HtmlDecode(lista_mezclada[2]);
+            this.Respuesta4 = HttpUtility.HtmlDecode(lista_mezclada[3]);
 
             this.Porcentaje += 0.1;
             this.PorcentajeBar = Porcentaje.ToString();
