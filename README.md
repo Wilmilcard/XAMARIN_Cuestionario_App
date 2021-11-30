@@ -2,8 +2,8 @@
     <h3 align="center">Juan David Leon Barrera</h3>
 	<p align="center">
 		<img src="https://img.shields.io/badge/Xamarin-3498DB?logo=xamarin&logoColor=white" alt="template repository">
-		<img src="https://img.shields.io/static/v1?label=proyecto&message=Xamarin Forms&color=white" alt="v1.0.0">
-		<img src="https://img.shields.io/static/v1?label=version&message=1.0.4&color=red" alt="v1.0.4">
+		<img src="https://img.shields.io/static/v1?label=proyecto&message=Xamarin Forms&color=white" alt="v1.2.0">
+		<img src="https://img.shields.io/static/v1?label=version&message=1.0.4&color=red" alt="v1.0.5">
 		<img src="https://img.shields.io/static/v1?label=licencia&message=wilmilcard&color=green" alt="no tiene">
 	</p>
     <p align="center">
@@ -80,6 +80,7 @@ Se clona el repositorio y se hace un debug desde un emulador o un celular en mod
 <img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/2.jpg">
 <img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/3.jpg">
 <img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/4.jpg">
+<img src="https://nevergate.com.co/otros/images/git/xamarin_trivia/6.jpg">
 
 Este programa puede ir mejorando y cambiando, pero mientras tanto esta es una muestra de lo que puede hacer 🛴
 
